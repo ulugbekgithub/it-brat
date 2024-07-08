@@ -1,0 +1,15 @@
+/* Custom scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #333333; /* Tailwind color: bg-gray-800 */
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: gray; /* Tailwind color: bg-gray-600 */
+    border-radius: 10px;
+    border: 2px solid #333333; /* Tailwind color: bg-gray-800 */
+  }
+  

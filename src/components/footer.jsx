@@ -31,7 +31,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div>
+      <div className="w-1/2">
         <ul>
           <li>
             <img src={logo} alt="logo" />
