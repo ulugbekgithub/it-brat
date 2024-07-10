@@ -13,7 +13,7 @@ export default function Profile() {
         <div className="w-[calc(100%-616px)]  bg-main-black">
           <CenterMenu />
         </div>
-        <div className="w-[308px]">
+        <div className="w-[308px] bg-main-black">
           <ProfileSidebar />
         </div>
       </div>

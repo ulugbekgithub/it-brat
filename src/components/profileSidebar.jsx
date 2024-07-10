@@ -3,6 +3,7 @@ import {
   IoNotificationsOutline,
   IoSettingsOutline,
 } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export default function ProfileSidebar() {
 
@@ -15,7 +16,9 @@ export default function ProfileSidebar() {
             <div className="w-full flex justify-between p-5">
               <IoExitOutline size={23} className="cursor-pointer" />
               <div className="flex gap-3">
+                <Link to={"/profile/natification"}>
                 <IoNotificationsOutline size={23} className="cursor-pointer" />
+                </Link>
                 <IoSettingsOutline size={23} className="cursor-pointer" />
               </div>
             </div>
@@ -27,7 +30,7 @@ export default function ProfileSidebar() {
             <li>
               <h2 className="text-center">Маргарита</h2>
             </li>
-            <li>
+            <li className="text-center">
               <span className="text-second-color">Программист</span>
             </li>
           </ul>

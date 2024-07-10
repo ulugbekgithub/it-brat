@@ -13,3 +13,18 @@
     border: 2px solid #333333; /* Tailwind color: bg-gray-800 */
   }
   
+
+  /* Custom scrollbar styles */
+.scrollbar-x-thin::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scrollbar-x-thin::-webkit-scrollbar-track {
+  background: #333333; /* Tailwind color: bg-gray-800 */
+}
+
+.scrollbar-x-thin::-webkit-scrollbar-thumb {
+  background-color: gray; /* Tailwind color: bg-gray-600 */
+  border-radius: 10px;
+  border: 2px solid #333333; /* Tailwind color: bg-gray-800 */
+}

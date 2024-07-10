@@ -12,12 +12,12 @@ export default function Rezume() {
           {Rezume1Data.map((item) => (
             <div key={item.title} className="w-full h-full">
               <div
-                className="flex items-end bg-cover bg-center w-[298px] h-[335px] rounded-xl"
+                className="flex items-end bg-cover bg-center w-[350px] h-[435px] rounded-xl"
                 style={{
                   backgroundImage: `url(${item.img})`,
                 }}
               >
-                <div className=" h-[45px] w-full bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur bg-opacity-20 backdrop-saturate-50 backdrop-contrast-100 flex justify-between items-center p-5">
+                <div className=" h-[45px] w-full bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur bg-opacity-20 backdrop-saturate-50 backdrop-contrast-100 flex justify-between items-center p-6">
                   <div>
                     <h5 className="text-main-white">{item.name}</h5>
                     <p className="text-second-color">{item.job}</p>

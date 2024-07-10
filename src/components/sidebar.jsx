@@ -30,9 +30,9 @@ export default function Sidebar() {
               <a
                 onClick={() => setAccardionOpen(!accardionOpen)}
                 href="#"
-                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
               >
-                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <AiOutlineHeart color="red" />
                 </span>
                 <span className="text-sm font-medium">Избранное</span>
@@ -49,7 +49,7 @@ export default function Sidebar() {
                   <Link to={"/profile/projects"}>
                     <a
                       href="#"
-                      className="flex flex-row items-center transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+                      className="flex flex-row items-center transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                     >
                       <span className="text-sm font-medium text-second-color">
                         Проекты
@@ -59,7 +59,7 @@ export default function Sidebar() {
                   <Link to={"/profile/rezume"}>
                     <a
                       href="#"
-                      className="flex flex-row items-center transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+                      className="flex flex-row items-center transform hover:translate-x-2 transition-transform ease-in duration-200  hover:text-main-red"
                     >
                       <span className="text-sm font-medium text-second-color">
                         Резюме
@@ -73,9 +73,9 @@ export default function Sidebar() {
               <Link to={"/profile/search"}>
                 <a
                   href="#"
-                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                 >
-                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
+                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                     <IoSearch />
                   </span>
                   <span className="text-sm font-medium">Поиск</span>
@@ -85,9 +85,9 @@ export default function Sidebar() {
             <li>
               <a
                 href="#"
-                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
               >
-                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <TiDocumentText />
                 </span>
                 <span className="text-sm font-medium">Проекты</span>
@@ -97,9 +97,9 @@ export default function Sidebar() {
               <Link to={"/profile/account"}>
                 <a
                   href="#"
-                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                 >
-                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
+                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                     <CgProfile />
                   </span>
 
@@ -110,9 +110,9 @@ export default function Sidebar() {
             <li>
               <a
                 href="#"
-                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
               >
-                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <IoDocumentTextOutline />
                 </span>
                 <span className="text-sm font-medium">Резюме</span>
@@ -122,9 +122,9 @@ export default function Sidebar() {
               <Link to={"/profile/chat"}>
                 <a
                   href="#"
-                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                 >
-                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
+                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                     <BsChatLeftDots />
                   </span>
                   <span className="text-sm font-medium">Чат</span>
@@ -138,9 +138,9 @@ export default function Sidebar() {
               <li>
                 <a
                   href="#"
-                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                 >
-                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
+                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                     <IoSettingsOutline />
                   </span>
                   <span className="text-sm font-medium">Настройки</span>
@@ -150,9 +150,9 @@ export default function Sidebar() {
               <li>
                 <a
                   href="#"
-                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                 >
-                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
+                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                     <IoExitOutline color="red" />
                   </span>
                   <span className="text-sm font-medium text-main-red">

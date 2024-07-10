@@ -8,14 +8,14 @@ export default function Header() {
           <img src={logo} alt="logo" />
         </div>
         <div>
-          <ul className="flex gap-[60px] text-main-white md:text-base text-sm ">
+          <ul className="md:flex gap-[60px] text-main-white lg:text-base text-xs hidden">
             <li>ГЛАВНАЯ</li>
             <li>О НАС</li>
             <li>КОНТАКТЫ</li>
             <li>FAQ</li>
           </ul>
         </div>
-        <div className="flex gap-[10px] items-center text-main-white">
+        <div className="md:flex gap-[10px] items-center text-main-white hidden">
           <Link to={"/login"}>
             <span>Вход</span>
           </Link>

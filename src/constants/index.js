@@ -9,6 +9,8 @@ import direction1 from "../assets/direction1.png";
 import krill from "../assets/krill.png"
 import margarita from "../assets/margarita.png"
 
+export const NotificationData =[]
+
 export const ServiceData = [
   {
     title: "UI разработка",

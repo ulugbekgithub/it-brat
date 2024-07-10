@@ -9,6 +9,7 @@ import Rezume from "./components/rezume";
 import Chat from "./components/chat";
 import Search from "./components/search";
 import Account from "./components/account";
+import Notification from "./components/notification";
 
 function App() {
   return <>
@@ -24,7 +25,7 @@ function App() {
     <Route path="/profile/chat" element={<Chat/>}/>
     <Route path="/profile/search" element={<Search/>}/>
     <Route path="/profile/account" element={<Account/>}/>
-
+    <Route path="/profile/natification" element={<Notification/>}/>
     </Route>
   </Routes>
   </>;

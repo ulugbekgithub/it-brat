@@ -22,7 +22,7 @@ export default function FirstLanding() {
     <div>
       <Header />
       <div className="w-full h-[800px] flex justify-center items-center bg-photo">
-        <div className="w-full max-w-[1096px] h-full flex flex-col justify-around p-5">
+        <div className="w-full max-w-[1096px] h-full flex flex-col justify-around md:p-0 p-20">
           <div>
             <h1 className="w-full max-w-[1026px]  leading-[68px] text-5xl font-bold text-main-white">
               НАХОДИТЕСЬ В ПОИСКЕ ИНТЕРЕСНОГО{" "}
@@ -35,7 +35,7 @@ export default function FirstLanding() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-[31px]">
+          <div className="flex flex-col gap-[31px] md:px-0 px-24">
             <button className="w-full max-w-[346px] h-[70px] bg-main-black text-main-white border-[3px] border-solid border-main-red rounded">
               <span className="font-bold">НАЙТИ ПРОЕКТ</span>
             </button>
@@ -46,8 +46,8 @@ export default function FirstLanding() {
         </div>
       </div>
 
-      <div className="w-full min-h-[441px] flex justify-center items-center bg-main-black">
-        <div className="w-full max-w-[1258px] min-h-[323px] absolute top-[900px] p-5 flex flex-col items-center md:flex-row md:justify-around bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-70  border-gray-100">
+      <div className="w-full relative min-h-[441px] flex justify-center items-center bg-main-black p-24 py-32">
+        <div className="w-full max-w-[1258px] min-h-[323px] mt-[-200px]  p-5 flex flex-col items-center md:flex-row md:justify-around bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-70">
           <div className="w-full max-w-[224px] min-h-[226px] text-center ">
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={account} alt="account" />
@@ -199,7 +199,7 @@ export default function FirstLanding() {
                   backgroundImage: `url(${item.img})`,
                 }}
               >
-                <div className="h-full w-full flex justify-center items-center bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100">
+                <div className="h-full w-full flex justify-center items-center bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
                   <h4 className="text-main-white text-sm md:text-2xl w-[170px] h-[62px] font-bold text-center">
                     {item.title}
                   </h4>
