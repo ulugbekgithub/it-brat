@@ -1,5 +1,6 @@
 import Header from "../../components/header";
 import "./firstLanding.css";
+import "../../components/css/custom.css";
 import account from "../../assets/accountIcon.png";
 import rezume from "../../assets/rezumeIcon.png";
 import search from "../../assets/searchIcon.png";
@@ -16,15 +17,23 @@ import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import Footer from "../../components/footer";
 import DesktopSwiper from "../../components/desktopSwiper";
+import ForCompony from "../../components/forCompony";
+import ForFreelance from "../../components/forFreelance";
+import { useState } from "react";
 
 export default function FirstLanding() {
+  const [openComponent, setOpenComponent] = useState(false);
+  const showCompony = () => {
+    setOpenComponent(!openComponent);
+  };
+  const showFreelance = () => {};
   return (
     <div>
       <Header />
       <div className="w-full h-[800px] flex justify-center items-center bg-photo">
-        <div className="w-full max-w-[1096px] h-full flex flex-col justify-around md:p-0 p-20">
+        <div className="w-full max-w-[1096px] h-full flex flex-col justify-around md:items-start items-center p-5">
           <div>
-            <h1 className="w-full max-w-[1026px]  leading-[68px] text-5xl font-bold text-main-white">
+            <h1 className="w-full md:max-w-[1026px] max-w-[275px]  md:leading-[68px] leading-9 md:text-5xl text-xl font-bold text-main-white">
               НАХОДИТЕСЬ В ПОИСКЕ ИНТЕРЕСНОГО{" "}
               <span className="text-main-red">ПРОЕКТА</span> ИЛИ{" "}
               <span className="text-main-red">КОМАНДЫ</span>?
@@ -47,7 +56,7 @@ export default function FirstLanding() {
       </div>
 
       <div className="w-full relative min-h-[441px] flex justify-center items-center bg-main-black p-24 py-32">
-        <div className="w-full max-w-[1258px] min-h-[323px] mt-[-200px]  p-5 flex flex-col items-center md:flex-row md:justify-around bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-70">
+        <div className="w-full max-w-[1258px] min-h-[323px] mt-[-200px]  p-5 flex flex-col items-center md:flex-row md:justify-around h-full bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur-sm bg-opacity-20 saturate-100 backdrop-contrast-100">
           <div className="w-full max-w-[224px] min-h-[226px] text-center ">
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={account} alt="account" />
@@ -83,13 +92,13 @@ export default function FirstLanding() {
           НАЙДИТЕ <span className="text-main-red">КОМАНДУ</span>
           <span className="text-main-red"> МЕЧТЫ</span> ЗДЕСЬ
         </h2>
-        <div className="w-full max-w-[1196px] flex flex-col items-center justify-center">
-          <div className="w-full flex flex-col-reverse md:flex-row">
+        <div className="w-full max-w-[1196px] flex flex-col items-center justify-center md:p-5 p-24">
+          <div className="w-full flex flex-col-reverse md:flex-row md:p-5">
             <div className=" min-h-[600px] flex items-end">
               <img className="w-full" src={commandMan} alt="commandMan" />
             </div>
             <div>
-              <div className="w-[50%] flex flex-col items-center ">
+              <div className="flex flex-col items-center ">
                 <div className="flex gap-[35px]">
                   <div className="p-5 box-shadow">
                     <span className="text-main-red text-5xl font-extrabold">
@@ -151,32 +160,54 @@ export default function FirstLanding() {
             <h3 className="text-main-white text-center text-5xl font-bold">
               ПРЕИМУЩЕСТВА <span className="text-main-red">ITBRAT</span>
             </h3>
-            <div className="w-full max-w-[1196px] flex justify-between items-center mt-[42px]">
-              <div className="w-full max-w-[491px] min-h-[600px] flex flex-col justify-between items-center pt-5 text-center itbrat-box">
-                <span className="text-main-white text-3xl font-semibold">
-                  Для компаний
-                </span>
-                <div className="w-full max-w-[373px] min-h-[467px] pt-5">
-                  <img className="mt-12" src={bratman} alt="bratman" />
+            <div className="w-full max-w-[1196px] flex flex-col justify-between items-center mt-[42px]">
+              <div className="w-full max-w-[295px] h-[39px] flex items-center justify-center bg-[#424242] rounded">
+                <button
+                  onClick={showCompony}
+                  className="w-full max-w-[141px] min-h-[31px] text-main-white rounded bg-[#560303]"
+                >
+                  <span className="text-xs">Для компаний</span>
+                </button>
+                <button
+                  onClick={showFreelance}
+                  className="w-full max-w-[141px] min-h-[31px] text-main-white rounded"
+                >
+                  <span className="text-xs">Для фрилансеров</span>
+                </button>
+              </div>
+              <div className="md:hidden block">
+                <div>
+                  <ForCompony />
+                </div>
+                <div className="hidden-component">
+                  <ForFreelance />
                 </div>
               </div>
-              <div className="w-full max-w-[491px] min-h-[600px] flex flex-col justify-between items-center pt-5 text-center itbrat-box">
-                <span className="text-main-white text-3xl font-semibold">
-                  Для фрилансеров
-                </span>
-                <div className="w-full max-w-[373px] h-[467px] pt-5">
-                  <img className="mt-9" src={bratgirl} alt="bratgirl" />
+              <div className="md:flex hidden">
+                <div className="w-full max-w-[491px] min-h-[600px] flex flex-col justify-between items-center pt-5 text-center itbrat-box">
+                  <span className="text-main-white text-3xl font-semibold">
+                    Для компаний
+                  </span>
+                  <div className="w-full max-w-[373px] min-h-[467px] pt-5">
+                    <img className="mt-12" src={bratman} alt="bratman" />
+                  </div>
+                </div>
+                <div className="w-full max-w-[491px] min-h-[600px] flex flex-col justify-between items-center pt-5 text-center itbrat-box">
+                  <span className="text-main-white text-3xl font-semibold">
+                    Для фрилансеров
+                  </span>
+                  <div className="w-full max-w-[373px] h-[467px] pt-5">
+                    <img className="mt-9" src={bratgirl} alt="bratgirl" />
+                  </div>
                 </div>
               </div>
             </div>
-            <button className="w-[283px] h-[62px] bg-main-red text-main-white text-2xl font-bold mt-12  box-shadow">
+            <button className="w-full max-w-[283px] h-[62px] bg-main-red text-main-white md:text-2xl text-xs font-bold mt-12  box-shadow">
               Присоединиться
             </button>
           </div>
 
           <DesktopSwiper />
-
-          
 
           <div>
             <h1 className="text-main-white text-center text-5xl font-bold">

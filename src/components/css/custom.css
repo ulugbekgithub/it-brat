@@ -28,3 +28,13 @@
   border-radius: 10px;
   border: 2px solid #333333; /* Tailwind color: bg-gray-800 */
 }
+
+
+
+.hidden-component{
+  display: none;
+}
+
+.show-component{
+  display: block;
+}

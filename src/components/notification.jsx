@@ -3,7 +3,7 @@ import notification from "../assets/notification.png";
 
 export default function Notification() {
   return (
-    <div className="text-main-white px-10">
+    <div className="text-main-white px-10 h-full">
       <h1 className="text-main-white text-3xl">Уведомления</h1>
       <div className="w-full h-full flex justify-center items-center">
         {NotificationData && NotificationData.length>0 ? (
