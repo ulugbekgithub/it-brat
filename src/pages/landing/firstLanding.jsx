@@ -8,30 +8,29 @@ import commandMan from "../../assets/commandMan.webp";
 import bratman from "../../assets/bratman.png";
 import bratgirl from "../../assets/bratgirl.png";
 
-import { DirectionData, Rezume1Data, Rezume2Data } from "../../constants";
-
-import { GrLinkNext } from "react-icons/gr";
+import { DirectionData } from "../../constants";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import Footer from "../../components/footer";
 import DesktopSwiper from "../../components/desktopSwiper";
+import MobileSwiper from "../../components/mobileSwiper";
 import ForCompony from "../../components/forCompony";
 import ForFreelance from "../../components/forFreelance";
 import { useState } from "react";
+import ScrollComponent from "../../components/scrollComponent";
+import SwiperRezume from "../../components/swiperRezume";
 
 export default function FirstLanding() {
-  const [openComponent, setOpenComponent] = useState(false);
-  const showCompony = () => {
-    setOpenComponent(!openComponent);
-  };
-  const showFreelance = () => {};
+  const [openComponentCompany, setOpenComponentCompany] = useState(true);
+ 
+ 
   return (
     <div>
       <Header />
       <div className="w-full h-[800px] flex justify-center items-center bg-photo">
-        <div className="w-full max-w-[1096px] h-full flex flex-col justify-around md:items-start items-center p-5">
+        <div className="w-full max-w-[1096px] h-full flex flex-col justify-around  p-5">
           <div>
             <h1 className="w-full md:max-w-[1026px] max-w-[275px]  md:leading-[68px] leading-9 md:text-5xl text-xl font-bold text-main-white">
               НАХОДИТЕСЬ В ПОИСКЕ ИНТЕРЕСНОГО{" "}
@@ -88,19 +87,23 @@ export default function FirstLanding() {
       </div>
 
       <div className="w-full flex flex-col justify-center items-center bg-texture">
-        <h2 className="w-full max-w-[500px] min-h-[122px] text-5xl font-bold text-main-white text-center">
+        <h2 className="w-full max-w-[500px] min-h-[122px] text-[clamp(24px,4vw,48px)] font-bold text-main-white text-center">
           НАЙДИТЕ <span className="text-main-red">КОМАНДУ</span>
           <span className="text-main-red"> МЕЧТЫ</span> ЗДЕСЬ
         </h2>
-        <div className="w-full max-w-[1196px] flex flex-col items-center justify-center md:p-5 p-24">
+        <div className="w-full max-w-[1196px] flex flex-col items-center justify-center md:p-5 p-5">
           <div className="w-full flex flex-col-reverse md:flex-row md:p-5">
-            <div className=" min-h-[600px] flex items-end">
-              <img className="w-full" src={commandMan} alt="commandMan" />
+            <div className="md:min-h-[600px] flex items-end">
+              <img
+                className="w-full h-full"
+                src={commandMan}
+                alt="commandMan"
+              />
             </div>
             <div>
               <div className="flex flex-col items-center ">
                 <div className="flex gap-[35px]">
-                  <div className="p-5 box-shadow">
+                  <div className="w-full max-w-[188px] p-5 box-shadow">
                     <span className="text-main-red text-5xl font-extrabold">
                       500+
                     </span>
@@ -108,7 +111,7 @@ export default function FirstLanding() {
                       соискателей
                     </p>
                   </div>
-                  <div className="p-5 box-shadow">
+                  <div className="w-full max-w-[295px] p-5 box-shadow">
                     <span className="text-main-red text-5xl font-extrabold">
                       300+
                     </span>
@@ -118,7 +121,7 @@ export default function FirstLanding() {
                   </div>
                 </div>
                 <div className="flex gap-[35px] mt-[35px]">
-                  <div className="p-5 box-shadow">
+                  <div className="w-full max-w-[159px] p-5 box-shadow">
                     <span className="text-main-red text-5xl font-extrabold">
                       50+
                     </span>
@@ -126,7 +129,7 @@ export default function FirstLanding() {
                       категорий
                     </p>
                   </div>
-                  <div className="p-5 box-shadow">
+                  <div className="w-full max-w-[194px] p-5 box-shadow">
                     <span className="text-main-red text-5xl font-extrabold">
                       1000+
                     </span>
@@ -157,31 +160,34 @@ export default function FirstLanding() {
             </div>
           </div>
           <div className="w-full min-h-[890px] p-5 flex flex-col justify-center items-center">
-            <h3 className="text-main-white text-center text-5xl font-bold">
-              ПРЕИМУЩЕСТВА <span className="text-main-red">ITBRAT</span>
+            <h3 className="text-main-white text-center text-[clamp(24px,3vw,48px)] font-bold">
+              ПРЕИМУЩЕСТВА <span className="text-main-red text-[clamp(24px,3vw,48px)]">ITBRAT</span>
             </h3>
             <div className="w-full max-w-[1196px] flex flex-col justify-between items-center mt-[42px]">
-              <div className="w-full max-w-[295px] h-[39px] flex items-center justify-center bg-[#424242] rounded">
+              <div className="w-full max-w-[295px] h-[39px] flex md:hidden items-center justify-center bg-[#424242] rounded">
                 <button
-                  onClick={showCompony}
-                  className="w-full max-w-[141px] min-h-[31px] text-main-white rounded bg-[#560303]"
+                  onClick={()=>setOpenComponentCompany(true)}
+                  className={`w-full max-w-[141px] min-h-[31px] text-main-white rounded ${openComponentCompany?'bg-[#560303]':''}`}
                 >
                   <span className="text-xs">Для компаний</span>
                 </button>
                 <button
-                  onClick={showFreelance}
-                  className="w-full max-w-[141px] min-h-[31px] text-main-white rounded"
+                  onClick={()=>setOpenComponentCompany(false)}
+                  className={`w-full max-w-[141px] min-h-[31px] text-main-white rounded ${!openComponentCompany?'bg-[#560303]':''}`}
                 >
                   <span className="text-xs">Для фрилансеров</span>
                 </button>
               </div>
               <div className="md:hidden block">
-                <div>
-                  <ForCompony />
-                </div>
-                <div className="hidden-component">
-                  <ForFreelance />
-                </div>
+                {openComponentCompany ? (
+                  <div>
+                    <ForCompony />
+                  </div>
+                ) : (
+                  <div>
+                    <ForFreelance />
+                  </div>
+                )}
               </div>
               <div className="md:flex hidden">
                 <div className="w-full max-w-[491px] min-h-[600px] flex flex-col justify-between items-center pt-5 text-center itbrat-box">
@@ -206,13 +212,17 @@ export default function FirstLanding() {
               Присоединиться
             </button>
           </div>
-
-          <DesktopSwiper />
+          <div className="w-full h-full md:block hidden">
+            <DesktopSwiper />
+          </div>
+          <div className="w-full h-full md:hidden block">
+            <MobileSwiper />
+          </div>
 
           <div>
-            <h1 className="text-main-white text-center text-5xl font-bold">
+            <h1 className="text-main-white text-center text-[clamp(24px,3vw,48px)] font-bold">
               МНОЖЕСТВО{" "}
-              <span className="text-main-red text-5xl font-bold">
+              <span className="text-main-red text-[clamp(24px,3vw,48px)] font-bold">
                 НАПРАВЛЕНИЙ
               </span>
             </h1>
@@ -231,7 +241,7 @@ export default function FirstLanding() {
                 }}
               >
                 <div className="h-full w-full flex justify-center items-center bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
-                  <h4 className="text-main-white text-sm md:text-2xl w-[170px] h-[62px] font-bold text-center">
+                  <h4 className="text-main-white text-[clamp(14px,2vw,24px)] w-[170px] h-[62px] font-bold text-center">
                     {item.title}
                   </h4>
                 </div>
@@ -242,59 +252,27 @@ export default function FirstLanding() {
             Больше категорий
           </button>
 
-          <div className="w-full h-[1024px] flex justify-between items-center">
+          <div className="w-full h-[1024px] flex flex-col md:flex-row justify-between items-center">
             <div>
-              <h1 className="text-main-white text-5xl font-bold">
+              <h1 className="text-main-white md:text-5xl text-2xl font-bold">
                 ЛУЧШИЕ <span className="text-main-red">РЕЗЮМЕ</span>
               </h1>
             </div>
-            <div className="flex gap-5 ">
-              <div className="w-full h-[950px] flex flex-col gap-7 overflow-y-scroll scrollbar-custom">
-                {Rezume1Data.map((item) => (
-                  <div className="relative" key={item.id}>
-                    <img src={item.img} alt="" />
-                    <div className="absolute bottom-0">
-                      <div className="flex justify-between p-3 h-full w-full bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-100">
-                        <div>
-                          <h5 className="text-main-white">{item.name}</h5>
-                          <span className="text-second-color">{item.job}</span>
-                        </div>
-                        <div className="ml-52 cursor-pointer">
-                          <GrLinkNext color="white" size={50} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="w-full h-[950px] flex flex-col gap-7 overflow-y-scroll scrollbar-custom">
-                {Rezume2Data.map((item) => (
-                  <div className="relative " key={item.id}>
-                    <img src={item.img} alt="" />
-                    <div className="flex justify-between absolute bottom-0">
-                      <div className="flex p-3 h-full w-full bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-70">
-                        <div>
-                          <h5 className="text-main-white">{item.name}</h5>
-                          <span className="text-second-color">{item.job}</span>
-                        </div>
-                        <div className="px-[137.5px] cursor-pointer">
-                          <GrLinkNext color="white" size={50} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="md:block hidden">
+              <ScrollComponent />
+            </div>
+            <div className="md:hidden block">
+              <SwiperRezume />
             </div>
           </div>
 
           <div className="w-full h-[567px] ">
             <div className="w-full max-w-[1128px] min-h-[320px] p-5 bg-[#101010] flex flex-col justify-around mt-[50px]">
               <div className="text-center">
-                <h1 className="text-main-white text-5xl font-bold">
+                <h1 className="text-main-white md:text-5xl text-2xl font-bold">
                   БОЛЬШЕ ИНТЕРЕСНЫХ ПРОЕКТОВ
                 </h1>
-                <p className="text-second-color text-xl font-light">
+                <p className="text-second-color md:text-xl text-sm font-light">
                   Подпишись на рассылку и получай новости одним из первых
                 </p>
               </div>

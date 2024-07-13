@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, EffectCards } from "swiper/modules";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 import { ServiceData } from "../constants";
+import { v4 as uuidv4 } from 'uuid';
 
 SwiperCore.use([Navigation]);
 
@@ -58,15 +59,15 @@ const MobileSwiper = () => {
           className="max-w-[90%]"
         >
           {ServiceData.map((item) => (
-            <SwiperSlide key={item.title}>
-              <div className="flex flex-col justify-end gap-6 mb-20 group relative shadow-lg text-white rounded-xl px-6 py-8 min-h-[300px] max-w-[250px] sm:h-[400px] sm:w-[350px]  overflow-hidden cursor-pointer">
+            <SwiperSlide key={uuidv4()}>
+              <div className="flex flex-col justify-end gap-6 mb-20 relative shadow-lg rounded-xl px-6 py-8 min-h-full max-w-full sm:h-[400px] sm:w-[350px]  overflow-hidden cursor-pointer">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${item.backgroundImage})`,
                   }}
                 />
-                <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50" />
+                <div className="absolute" />
                 <div className="relative flex flex-col gap-10">
                   <h1 className="text-xl font-semibold lg:text-2xl">
                     {item.title}

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination, Navigation } from "swiper/modules";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 import { ServiceData } from "../constants";
+import { v4 as uuidv4 } from 'uuid';
 
 SwiperCore.use([Navigation]);
 
@@ -39,8 +40,8 @@ const DesktopSwiper = () => {
           className="w-full"
         >
           {ServiceData.map((item) => (
-            <SwiperSlide key={item.title}>
-              <div className="flex flex-col justify-end gap-6 mb-20 group relative shadow-lg text-white rounded-xl px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer">
+            <SwiperSlide key={uuidv4()}>
+              <div className="flex flex-col justify-end gap-6 mb-20 group relative shadow-lg text-white px-6 py-8 h-full w-full lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
