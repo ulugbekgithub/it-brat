@@ -71,10 +71,10 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: white;
+  background: white !important;
 }
 
-
 .swiper-pagination-bullet {
-  background: blue;
+  background: red !important;
+  opacity: 1;
 }

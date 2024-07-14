@@ -4,11 +4,11 @@ import bratgirl from "../assets/bratgirl.png";
 
 export default function ForFreelance() {
   return (
-    <div className="p-8">
-      <ul className="flex flex-col gap-3 px-24">
+    <div className="p-8 flex flex-col items-center">
+      <ul className="w-full flex flex-col whitespace-nowrap gap-3 px-32">
         <li className="flex gap-2">
           <FaCheck size={20} color="red" />
-          <span className="text-main-white text-xs font-light">
+          <span className=" text-main-white text-xs font-light">
             регулярно обновляющаяся база проектов
           </span>
         </li>

@@ -60,8 +60,8 @@ export default function FirstLanding() {
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={account} alt="account" />
             </div>
-            <h4 className="text-main-white mb-3">СОЗДАЙТЕ АККАУНТ</h4>
-            <p className="text-second-color text-center">
+            <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">СОЗДАЙТЕ АККАУНТ</h4>
+            <p className="w-full max-w-[220px] text-second-color text-center text-[clamp(12px,3vw,14px)]">
               Зарегистрируйтесь и заполните профиль в личном кабинете
             </p>
           </div>
@@ -69,8 +69,8 @@ export default function FirstLanding() {
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={rezume} alt="rezume" />
             </div>
-            <h4 className="text-main-white mb-3">ЗАПОЛНИТЕ РЕЗЮМЕ</h4>
-            <p className="text-second-color text-center">
+            <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">ЗАПОЛНИТЕ РЕЗЮМЕ</h4>
+            <p className="w-full max-w-[220px] text-second-color text-center text-[clamp(12px,3vw,14px)]">
               Укажите свои навыки и предпочтения
             </p>
           </div>
@@ -78,8 +78,8 @@ export default function FirstLanding() {
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={search} alt="search" />
             </div>
-            <h4 className="text-main-white mb-3">ИЩИТЕ И СОЗДАВАЙТЕ</h4>
-            <p className="w-[200px] text-second-color text-center">
+            <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">ИЩИТЕ И СОЗДАВАЙТЕ</h4>
+            <p className="w-full max-w-[220px] text-second-color text-center text-[clamp(12px,3vw,14px)]">
               Ищите интересные проекты и команду или создавайте свои
             </p>
           </div>
@@ -164,7 +164,7 @@ export default function FirstLanding() {
               ПРЕИМУЩЕСТВА <span className="text-main-red text-[clamp(24px,3vw,48px)]">ITBRAT</span>
             </h3>
             <div className="w-full max-w-[1196px] flex flex-col justify-between items-center mt-[42px]">
-              <div className="w-full max-w-[295px] h-[39px] flex md:hidden items-center justify-center bg-[#424242] rounded">
+              <div className="w-full max-w-[295px] h-[39px] flex md:hidden items-center justify-between bg-[#424242] rounded p-5">
                 <button
                   onClick={()=>setOpenComponentCompany(true)}
                   className={`w-full max-w-[141px] min-h-[31px] text-main-white rounded ${openComponentCompany?'bg-[#560303]':''}`}
@@ -189,7 +189,7 @@ export default function FirstLanding() {
                   </div>
                 )}
               </div>
-              <div className="md:flex hidden">
+              <div className="w-full md:flex justify-between hidden">
                 <div className="w-full max-w-[491px] min-h-[600px] flex flex-col justify-between items-center pt-5 text-center itbrat-box">
                   <span className="text-main-white text-3xl font-semibold">
                     Для компаний
@@ -231,7 +231,7 @@ export default function FirstLanding() {
             </p>
           </div>
 
-          <div className="w-full h-[500px] grid grid-cols-2 md:grid-cols-4 gap-[44px] mt-[58px] p-5">
+          <div className="w-full min-h-[500px] grid grid-cols-2 md:grid-cols-4 gap-[44px] mt-[58px] p-5">
             {DirectionData.map((item) => (
               <div
                 key={item.title}
