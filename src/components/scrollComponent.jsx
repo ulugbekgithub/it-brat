@@ -2,7 +2,7 @@ import { GrLinkNext } from "react-icons/gr";
 import { Rezume1Data, Rezume2Data } from "../constants";
 import { v4 as uuidv4 } from "uuid";
 
-import './css/custom.css'
+import "./css/custom.css";
 
 export default function ScrollComponent() {
   return (

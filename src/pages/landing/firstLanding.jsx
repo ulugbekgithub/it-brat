@@ -252,7 +252,7 @@ export default function FirstLanding() {
             Больше категорий
           </button>
 
-          <div className="w-full h-[1024px] flex flex-col md:flex-row justify-between items-center">
+          <div className="w-full py-10 flex flex-col md:flex-row justify-between items-center">
             <div>
               <h1 className="text-main-white md:text-5xl text-2xl font-bold">
                 ЛУЧШИЕ <span className="text-main-red">РЕЗЮМЕ</span>
@@ -261,7 +261,7 @@ export default function FirstLanding() {
             <div className="md:block hidden">
               <ScrollComponent />
             </div>
-            <div className="md:hidden block">
+            <div className="block md:hidden">
               <SwiperRezume />
             </div>
           </div>
