@@ -8,11 +8,11 @@ export default function Rezume() {
       <div className="">
         <h1 className="text-main-white text-3xl font-semibold">Резюме</h1>
 
-        <div className="w-full h-full grid grid-cols-2 gap-5 py-3">
+        <div className="w-full h-full grid lg:grid-cols-2 grid-cols-1 gap-5 py-3">
           {Rezume1Data.map((item) => (
             <div key={item.title} className="w-full h-full">
               <div
-                className="flex items-end bg-cover bg-center w-[350px] h-[435px] rounded-xl"
+                className="flex items-end bg-cover bg-center w-[100%] h-[435px] rounded-xl"
                 style={{
                   backgroundImage: `url(${item.img})`,
                 }}

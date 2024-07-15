@@ -4,6 +4,7 @@ import {
   IoSettingsOutline,
 } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import Charts from "../components/charts";
 
 export default function ProfileSidebar() {
 
@@ -34,6 +35,17 @@ export default function ProfileSidebar() {
               <span className="text-second-color">Программист</span>
             </li>
           </ul>
+
+          <div className="p-2">
+          <Charts/>
+          </div>
+
+          <div className="w-full h-20 px-5">
+            <div className="flex justify-between">
+              <span className="text-main-white text-xs">Уведомления</span>
+              <a href="" className="text-main-red text-xs underline">Все</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
