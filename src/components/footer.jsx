@@ -6,10 +6,10 @@ import { PiInstagramLogoFill } from "react-icons/pi";
 
 export default function Footer() {
   return (
-    <div className="w-full max-w-[1196px] flex flex-col-reverse items-center gap-20 md:flex-row justify-between mt-[200px] pb-12">
+    <div className="w-full max-w-[1196px] flex flex-col-reverse items-center  gap-20 md:flex-row  mt-[200px] pb-12">
       <div className="w-1/2 flex justify-between">
         <div>
-          <ul className="flex flex-col gap-2 p-5">
+          <ul className="flex flex-col gap-2 p-5 text-[clamp(8px,3vw,14px)]">
             <li className="text-main-white">
               <h3>МЕНЮ</h3>
             </li>
@@ -20,7 +20,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <ul className="flex flex-col gap-2 p-5">
+          <ul className="flex flex-col gap-2 p-5 text-[clamp(8px,3vw,14px)]">
             <li className="text-main-white">
               <h3>О ПРОЕКТЕ</h3>
             </li>
@@ -32,8 +32,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="w-1/2">
-        <ul>
-          <li>
+        <ul className="text-[clamp(8px,3vw,14px)]">
+          <li className="w-[196px] h-[32px]">
             <img src={logo} alt="logo" />
           </li>
           <li className="text-second-color mt-[29px]">

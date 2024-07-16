@@ -164,7 +164,7 @@ export default function FirstLanding() {
               ПРЕИМУЩЕСТВА <span className="text-main-red text-[clamp(24px,3vw,48px)]">ITBRAT</span>
             </h3>
             <div className="w-full max-w-[1196px] flex flex-col justify-between items-center mt-[42px]">
-              <div className="w-full max-w-[295px] h-[39px] flex md:hidden items-center justify-between bg-[#424242] rounded p-5">
+              <div className="w-full max-w-[295px] h-[39px] flex md:hidden items-center justify-between bg-[#424242] rounded p-3">
                 <button
                   onClick={()=>setOpenComponentCompany(true)}
                   className={`w-full max-w-[141px] min-h-[31px] text-main-white rounded ${openComponentCompany?'bg-[#560303]':''}`}
@@ -231,7 +231,7 @@ export default function FirstLanding() {
             </p>
           </div>
 
-          <div className="w-full min-h-[500px] grid grid-cols-2 md:grid-cols-4 gap-[44px] mt-[58px] p-5">
+          <div className="w-full h-[500px] grid grid-cols-2 md:grid-cols-4 gap-[44px] mt-[58px] p-5">
             {DirectionData.map((item) => (
               <div
                 key={item.title}

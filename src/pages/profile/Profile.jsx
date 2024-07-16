@@ -36,7 +36,7 @@ export default function Profile() {
         <div className="w-full max-w-[308px] md:block hidden">
           <Sidebar />
         </div>
-        <div className="md:w-[calc(100%-616px)] w-full md:p-0 p-10 bg-main-black">
+        <div className="md:w-[calc(100%-616px)] w-full  md:p-0 p-10 bg-main-black">
           <CenterMenu />
         </div>
         <div className="w-full   max-w-[308px] bg-main-black md:block hidden">
