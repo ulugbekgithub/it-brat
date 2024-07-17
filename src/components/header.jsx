@@ -24,6 +24,17 @@ export default function Header() {
             КОНТАКТЫ
           </li>
           <li className="cursor-pointer hover:text-main-red my-4 py-4">FAQ</li>
+          <li className="flex items-center justify-center gap-2 my-4 py-4">
+            <Link to={"/sign-in"}>
+              <span className="cursor-pointer hover:text-main-red">Вход</span>
+            </Link>
+            <div className="w-1 h-5 bg-main-red"></div>
+            <Link to={"/sign-up"}>
+            <span className="cursor-pointer hover:text-main-red">
+              Регистрация
+            </span>
+            </Link>
+          </li>
         </ul>
       </div>
     </>
@@ -44,12 +55,12 @@ export default function Header() {
           </ul>
         </div>
         <div className="md:flex gap-[10px] items-center text-main-white hidden">
-          <Link to={"/login"}>
+          <Link to={"/sign-in"}>
             <span className="cursor-pointer hover:text-main-red">Вход</span>
           </Link>
 
           <div className="w-[1px] h-[20px] bg-main-red"></div>
-          <Link to={"/register"}>
+          <Link to={"/sign-up"}>
             <span className="cursor-pointer hover:text-main-red">
               Регистрация
             </span>

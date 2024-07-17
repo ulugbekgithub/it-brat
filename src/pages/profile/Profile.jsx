@@ -44,7 +44,7 @@ export default function Profile() {
         </div>
       </div>
       <div className="w-full flex justify-center items-center bg-main-black">
-        <div className="w-full max-w-[1196px] flex justify-center items-center">
+        <div className="w-full max-w-[1196px]  flex justify-center items-center">
           <Footer />
         </div>
       </div>

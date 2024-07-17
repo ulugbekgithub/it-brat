@@ -8,7 +8,7 @@ export default function ForCompony() {
       <ul className="flex flex-col whitespace-nowrap  gap-3 ">
         <li className="flex gap-2">
           <FaCheck size={20} color="red" />
-          <span className=" text-main-white text-xs font-light">
+          <span className="w-full max-w-[247px] text-main-white text-xs font-light">
             быстрый поиск профессианальной команды или специалиста
           </span>
         </li>

@@ -22,7 +22,8 @@
 .box-shadow{
     /* border: 2px solid red; */
     border-radius: 5px;
-    box-shadow:  3px 3px 8px red;
+    box-shadow:  3px 3px 20px red;
+    text-shadow: 1px 1px 6px;
 }
 .itbrat-box{
     border-radius: 5px;

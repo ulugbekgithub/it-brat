@@ -16,7 +16,7 @@ export default function CenterMenu() {
 
         
         
-       <div className="h-[calc(100vh-100px)] w-full overflow-y-auto scrollbar-thin">
+       <div className="md:h-[calc(100vh-140px)] w-full overflow-y-auto scrollbar-thin">
        <Outlet/>
        </div>
 

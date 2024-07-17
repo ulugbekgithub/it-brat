@@ -16,11 +16,11 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<FirstLanding />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/sign-in" element={<Login />} />
+        <Route path="/sign-up" element={<Register />} />
         <Route path="/profile" element={<Profile />}>
           <Route path="/profile/projects" element={<Projects />} />
-          <Route path="/profile/rezume" element={<Rezume />} />
+          <Route path="/profile/resume" element={<Rezume />} />
           <Route path="/profile/chat" element={<Chat />} />
           <Route path="/profile/search" element={<Search />} />
           <Route path="/profile/account" element={<Account />} />

@@ -29,7 +29,7 @@ export default function FirstLanding() {
   return (
     <div>
       <Header />
-      <div className="w-full h-[800px] flex justify-center items-center bg-photo">
+      <div className="w-full h-[800px] flex justify-center items-center bg-photo bg-main-black">
         <div className="w-full max-w-[1096px] h-full flex flex-col justify-around  p-5">
           <div className="">
             <h1 className="w-full md:max-w-[1026px] max-w-[275px]  md:leading-[68px] leading-9 md:text-5xl text-xl font-bold text-main-white">
@@ -44,18 +44,18 @@ export default function FirstLanding() {
           </div>
 
           <div className="flex flex-col gap-[31px] md:px-0 px-5">
-            <button className="w-full max-w-[346px] h-[70px] bg-main-black text-main-white border-[3px] border-solid border-main-red rounded">
-              <span className="font-bold">НАЙТИ ПРОЕКТ</span>
+            <button className="w-full max-w-[346px] h-[70px] text-main-white border-[3px] border-solid border-main-red  bg-gray-7800 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30">
+              <span className="font-bold text-[clamp(16px,3vw,24px)]">НАЙТИ ПРОЕКТ</span>
             </button>
             <button className="w-full max-w-[346px] h-[70px] bg-main-red text-main-black rounded box-shadow">
-              <span className="font-bold">НАЙТИ КОМАНДУ</span>
+              <span className="font-bold text-[clamp(16px,3vw,24px)]">НАЙТИ КОМАНДУ</span>
             </button>
           </div>
         </div>
       </div>
 
       <div className="w-full relative min-h-[441px] flex justify-center items-center bg-main-black p-24 py-32">
-        <div className="w-full max-w-[1258px] min-h-[323px] mt-[-200px]  p-5  flex flex-col items-center md:flex-row md:justify-around h-full bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur-sm bg-opacity-20 saturate-100 backdrop-contrast-100">
+        <div className="w-full max-w-[1258px] min-h-[323px] mt-[-200px] flex flex-col items-center md:flex-row md:justify-around rounded-xl h-full bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur-sm bg-opacity-20 saturate-100 backdrop-contrast-100">
           <div className="w-full max-w-[224px] min-h-[226px] text-center ">
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={account} alt="account" />
@@ -256,8 +256,8 @@ export default function FirstLanding() {
           </button>
 
           <div className="w-full py-10 flex flex-col md:flex-row justify-between items-center">
-            <div>
-              <h1 className="text-main-white md:text-5xl text-2xl font-bold">
+            <div className="w-[80%]">
+              <h1 className="w-full flex justify-center gap-2 text-main-white text-[clamp(24px,3vw,48px)] font-bold">
                 ЛУЧШИЕ <span className="text-main-red">РЕЗЮМЕ</span>
               </h1>
             </div>
