@@ -4,7 +4,7 @@ import bratgirl from "../assets/bratgirl.png";
 
 export default function ForFreelance() {
   return (
-    <div className="p-8 flex flex-col items-center">
+    <div className="flex flex-col items-center py-5">
       <ul className="w-full flex flex-col whitespace-nowrap gap-3 px-32">
         <li className="flex gap-2">
           <FaCheck size={20} color="red" />
@@ -25,7 +25,7 @@ export default function ForFreelance() {
           </span>
         </li>
       </ul>
-      <div className="px-10">
+      <div className="px-10 w-[355px] h-[377px]">
         <img src={bratgirl} alt="" />
       </div>
     </div>

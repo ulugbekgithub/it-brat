@@ -26,7 +26,7 @@ const DesktopSwiper = () => {
 
   return (
     <div className="w-full">
-      <div className="flex items-center justify-center flex-col h-[800px] text-main-white">
+      <div className="flex items-center justify-center flex-col h-[700px] text-main-white">
         <Swiper
           spaceBetween={50}
           slidesPerView={3}
@@ -41,7 +41,7 @@ const DesktopSwiper = () => {
         >
           {ServiceData.map((item) => (
             <SwiperSlide key={uuidv4()}>
-              <div className="flex flex-col justify-end gap-6 mb-20 group relative shadow-lg text-white px-6 py-8 h-full w-full lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer">
+              <div className="flex flex-col justify-end gap-6 mb-20 group relative shadow-lg text-white px-6 py-8 h-full w-full  overflow-hidden cursor-pointer">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
@@ -65,7 +65,7 @@ const DesktopSwiper = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="flex gap-5">
+        <div className="flex gap-5 mt-5">
           <button
             className="w-[53px] h-[53px] bg-main-red rounded-full flex justify-center items-center"
             onClick={goPrev}

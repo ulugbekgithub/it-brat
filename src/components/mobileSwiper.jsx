@@ -26,7 +26,7 @@ const MobileSwiper = () => {
 
   return (
     <div className="w-full px-5">
-      <div className="flex items-center justify-center flex-col h-[800px] text-main-white">
+      <div className="flex items-center justify-center flex-col h-[500px] text-main-white">
         <Swiper
           effect={"coverflow"}
           grabCursor={true}

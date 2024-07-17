@@ -31,7 +31,7 @@ export default function FirstLanding() {
       <Header />
       <div className="w-full h-[800px] flex justify-center items-center bg-photo">
         <div className="w-full max-w-[1096px] h-full flex flex-col justify-around  p-5">
-          <div>
+          <div className="">
             <h1 className="w-full md:max-w-[1026px] max-w-[275px]  md:leading-[68px] leading-9 md:text-5xl text-xl font-bold text-main-white">
               НАХОДИТЕСЬ В ПОИСКЕ ИНТЕРЕСНОГО{" "}
               <span className="text-main-red">ПРОЕКТА</span> ИЛИ{" "}
@@ -43,7 +43,7 @@ export default function FirstLanding() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-[31px] md:px-0 px-24">
+          <div className="flex flex-col gap-[31px] md:px-0 px-5">
             <button className="w-full max-w-[346px] h-[70px] bg-main-black text-main-white border-[3px] border-solid border-main-red rounded">
               <span className="font-bold">НАЙТИ ПРОЕКТ</span>
             </button>
@@ -55,7 +55,7 @@ export default function FirstLanding() {
       </div>
 
       <div className="w-full relative min-h-[441px] flex justify-center items-center bg-main-black p-24 py-32">
-        <div className="w-full max-w-[1258px] min-h-[323px] mt-[-200px]  p-5 flex flex-col items-center md:flex-row md:justify-around h-full bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur-sm bg-opacity-20 saturate-100 backdrop-contrast-100">
+        <div className="w-full max-w-[1258px] min-h-[323px] mt-[-200px]  p-5  flex flex-col items-center md:flex-row md:justify-around h-full bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur-sm bg-opacity-20 saturate-100 backdrop-contrast-100">
           <div className="w-full max-w-[224px] min-h-[226px] text-center ">
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={account} alt="account" />
@@ -65,16 +65,16 @@ export default function FirstLanding() {
               Зарегистрируйтесь и заполните профиль в личном кабинете
             </p>
           </div>
-          <div className="w-[224px] h-[226px] text-center">
+          <div className="w-full max-w-[224px] h-[226px] text-center">
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={rezume} alt="rezume" />
             </div>
             <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">ЗАПОЛНИТЕ РЕЗЮМЕ</h4>
-            <p className="w-full max-w-[220px] text-second-color text-center text-[clamp(12px,3vw,14px)]">
+            <p className="w-full  text-second-color  text-[clamp(12px,3vw,14px)]">
               Укажите свои навыки и предпочтения
             </p>
           </div>
-          <div className="w-[224px] h-[226px] text-center ">
+          <div className="w-full max-w-[224px] h-[226px] text-center ">
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={search} alt="search" />
             </div>
@@ -104,42 +104,42 @@ export default function FirstLanding() {
               <div className="flex flex-col items-center ">
                 <div className="flex gap-[35px]">
                   <div className="w-full max-w-[188px] p-5 box-shadow">
-                    <span className="text-main-red text-5xl font-extrabold">
+                    <span className="text-main-red text-[clamp(24px,3vw,48px)] font-extrabold">
                       500+
                     </span>
-                    <p className="text-main-white text-2xl font-light">
+                    <p className="text-main-white text-[clamp(12px,3vw,20px)] font-light">
                       соискателей
                     </p>
                   </div>
                   <div className="w-full max-w-[295px] p-5 box-shadow">
-                    <span className="text-main-red text-5xl font-extrabold">
+                    <span className="text-main-red text-[clamp(24px,3vw,48px)] font-extrabold">
                       300+
                     </span>
-                    <p className="text-main-white text-2xl font-light">
+                    <p className="text-main-white text-[clamp(12px,3vw,20px)] font-light">
                       размещенных проектов
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-[35px] mt-[35px]">
                   <div className="w-full max-w-[159px] p-5 box-shadow">
-                    <span className="text-main-red text-5xl font-extrabold">
+                    <span className="text-main-red text-[clamp(24px,3vw,48px)] font-extrabold">
                       50+
                     </span>
-                    <p className="text-main-white text-2xl font-light">
+                    <p className="text-main-white text-[clamp(12px,3vw,20px)] font-light">
                       категорий
                     </p>
                   </div>
                   <div className="w-full max-w-[194px] p-5 box-shadow">
-                    <span className="text-main-red text-5xl font-extrabold">
+                    <span className="text-main-red text-[clamp(24px,3vw,48px)] font-extrabold">
                       1000+
                     </span>
-                    <p className="text-main-white text-2xl font-light">
+                    <p className="text-main-white text-[clamp(12px,3vw,20px)] font-light">
                       резюме
                     </p>
                   </div>
                 </div>
 
-                <p className="text-second-color text-base font-light w-full  min-h-[120px] mt-[35px]">
+                <p className="text-second-color text-[clamp(12px,3vw,16px)] font-light w-full  min-h-[120px] mt-[35px]">
                   Найти единомышленников-экспертов просто! ITBRAT - надежная
                   платформа для поиска профессионалов и совместной реализации
                   задуманных проектов разных направлений. Наша система
@@ -148,7 +148,7 @@ export default function FirstLanding() {
                   партнера для воплощения своих идей.
                 </p>
 
-                <p className="text-second-color text-base font-light w-full  min-h-[100px] mt-[29px]">
+                <p className="text-second-color text-[clamp(12px,3vw,16px)] font-light w-full  min-h-[100px] mt-[29px]">
                   Ищете другие предложения? <br /> Вы также можете ознакомиться
                   с нашим сервисом{" "}
                   <span className="text-main-red">«ITStock»</span> <br />{" "}
@@ -159,7 +159,7 @@ export default function FirstLanding() {
               </div>
             </div>
           </div>
-          <div className="w-full min-h-[890px] p-5 flex flex-col justify-center items-center">
+          <div className="w-full md:min-h-[890px] p-5 flex flex-col justify-center items-center">
             <h3 className="text-main-white text-center text-[clamp(24px,3vw,48px)] font-bold">
               ПРЕИМУЩЕСТВА <span className="text-main-red text-[clamp(24px,3vw,48px)]">ITBRAT</span>
             </h3>
@@ -208,10 +208,13 @@ export default function FirstLanding() {
                 </div>
               </div>
             </div>
-            <button className="w-full max-w-[283px] h-[62px] bg-main-red text-main-white md:text-2xl text-xs font-bold mt-12  box-shadow">
+            <button className="w-full max-w-[283px] h-[62px] bg-main-red text-main-white md:text-2xl text-xs font-bold mt-12  box-shadow md:block hidden">
               Присоединиться
             </button>
           </div>
+
+          <h1 className="text-main-white text-[clamp(24px,3vw,48px)] text-center font-bold">ПОСЛЕДНИЕ РАЗМЕЩЕННЫЕ <span className="text-main-red">ПРОЕКТЫ</span></h1>
+          
           <div className="w-full h-full md:block hidden">
             <DesktopSwiper />
           </div>
