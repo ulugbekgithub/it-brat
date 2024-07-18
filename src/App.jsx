@@ -23,8 +23,8 @@ function App() {
           <Route path="/profile/resume" element={<Rezume />} />
           <Route path="/profile/chat" element={<Chat />} />
           <Route path="/profile/search" element={<Search />} />
-          <Route path="/profile/account" element={<Account />} />
-          <Route path="/profile/natification" element={<Notification />} />
+          <Route path="/profile/accaunt" element={<Account />} />
+          <Route path="/profile/notification" element={<Notification />} />
         </Route>
       </Routes>
     </>
