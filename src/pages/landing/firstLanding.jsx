@@ -29,7 +29,7 @@ export default function FirstLanding() {
   return (
     <div>
       <Header />
-      <div className="w-full h-[800px] flex justify-center items-center bg-photo bg-main-black">
+      <div className="w-full min-h-[800px] flex justify-center items-center bg-photo bg-main-black">
         <div className="w-full max-w-[1096px] h-full flex flex-col justify-around  p-5">
           <div className="">
             <h1 className="w-full md:max-w-[1026px] max-w-[275px]  md:leading-[68px] leading-9 md:text-5xl text-xl font-bold text-main-white">
@@ -244,7 +244,7 @@ export default function FirstLanding() {
                 }}
               >
                 <div className="h-full w-full flex justify-center items-center bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
-                  <h4 className="text-main-white text-[clamp(14px,2vw,24px)] w-[170px] h-[62px] font-bold text-center">
+                  <h4 className="text-main-white text-[clamp(12px,3vw,24px)] w-[170px] h-[62px] font-bold text-center flex justify-center items-center">
                     {item.title}
                   </h4>
                 </div>
@@ -270,7 +270,7 @@ export default function FirstLanding() {
           </div>
 
           <div className="w-full h-[567px] ">
-            <div className="w-full max-w-[1128px] min-h-[320px] p-5 bg-[#101010] flex flex-col justify-around mt-[50px]">
+            <div className="w-full max-w-[1128px] min-h-[320px] p-5 bg-[#101010] flex flex-col justify-around rounded-xl mt-[50px]">
               <div className="text-center">
                 <h1 className="text-main-white md:text-5xl text-2xl font-bold">
                   БОЛЬШЕ ИНТЕРЕСНЫХ ПРОЕКТОВ

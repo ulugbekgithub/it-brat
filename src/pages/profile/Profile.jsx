@@ -50,7 +50,7 @@ export default function Profile() {
     navigate('/profile/chat')
     setClick(false)
   }
-  const content = (
+  const contentSidebar = (
     <>
       <div className="min-h-screen flex flex-row bg-main-black p-5 transition-transform duration-500 ease-in-out translate-y-3">
         <div className="flex flex-col items-center w-full max-w-[393px]  bg-main-black text-main-white overflow-hidden">
@@ -211,7 +211,7 @@ export default function Profile() {
               )}
             </button>
           </div>
-          {click && content}
+          {click && contentSidebar}
         </div>
         <div className="w-full max-w-[308px] md:block hidden">
           <Sidebar />

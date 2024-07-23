@@ -7,7 +7,7 @@ import "./css/custom.css";
 export default function ScrollComponent() {
   return (
     <div className="flex gap-5 ">
-      <div className="w-full h-[950px] flex flex-col gap-7 overflow-y-scroll scrollbar-rezume-thin">
+      <div className="w-full h-[950px] flex flex-col gap-7 rounded-xl overflow-y-scroll scrollbar-rezume-thin">
         {Rezume1Data.map((item) => (
           <div className="relative" key={uuidv4()}>
             <img src={item.img} alt="" />
@@ -25,7 +25,7 @@ export default function ScrollComponent() {
           </div>
         ))}
       </div>
-      <div className="w-full h-[950px] flex flex-col gap-7 overflow-y-scroll scrollbar-rezume-thin">
+      <div className="w-full h-[950px] flex flex-col gap-7 rounded-xl overflow-y-scroll scrollbar-rezume-thin">
         {Rezume2Data.map((item) => (
           <div className="relative " key={uuidv4()}>
             <img src={item.img} alt="" />
@@ -35,7 +35,7 @@ export default function ScrollComponent() {
                   <h5 className="text-main-white">{item.name}</h5>
                   <span className="text-second-color">{item.job}</span>
                 </div>
-                <div className="transform hover:translate-x-2 transition-transform ease-in duration-200 cursor-pointercursor-pointer">
+                <div className="transform hover:translate-x-2 transition-transform ease-in duration-200 cursor-pointer">
                   <GrLinkNext color="white" size={50} />
                 </div>
               </div>

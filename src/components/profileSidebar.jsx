@@ -11,8 +11,8 @@ export default function ProfileSidebar() {
 
   return (
     <div className="bg-main-black">
-      <div className="min-h-screen flex flex-row bg-main-black p-5">
-        <div className="flex flex-col w-full max-w-[393px]  bg-[#101010] text-main-white rounded-3xl overflow-hidden">
+      <div className="min-h-screen flex flex-row bg-main-black  p-5">
+        <div className="flex flex-col max-w-[393px]  h-full w-full bg-gray-700  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 text-main-white rounded-3xl overflow-hidden">
           <div className="flex items-center justify-center h-20 shadow-md">
             <div className="w-full flex justify-between p-5">
               <IoExitOutline size={23} className="cursor-pointer hover:text-main-red" />

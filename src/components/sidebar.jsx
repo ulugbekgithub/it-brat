@@ -56,7 +56,7 @@ export default function Sidebar() {
                       </span>
                     </a>
                   </Link>
-                  <Link to={"/profile/rezume"}>
+                  <Link to={"/profile/resume"}>
                     <a
                       href="#"
                       className="flex flex-row items-center transform hover:translate-x-2 transition-transform ease-in duration-200  hover:text-main-red"
@@ -83,6 +83,7 @@ export default function Sidebar() {
               </Link>
             </li>
             <li>
+              <Link to={"/profile/projects"}>
               <a
                 href="#"
                 className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
@@ -92,9 +93,10 @@ export default function Sidebar() {
                 </span>
                 <span className="text-sm font-medium">Проекты</span>
               </a>
+              </Link>
             </li>
             <li>
-              <Link to={"/profile/account"}>
+              <Link to={"/profile/accaunt"}>
                 <a
                   href="#"
                   className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
