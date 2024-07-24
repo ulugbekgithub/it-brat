@@ -17,7 +17,7 @@ export default function ProfileSidebar() {
             <div className="w-full flex justify-between p-5">
               <IoExitOutline size={23} className="cursor-pointer hover:text-main-red" />
               <div className="flex gap-3">
-                <Link to={"/profile/natification"}>
+                <Link to={"/profile/notification"}>
                 <IoNotificationsOutline size={23} className="cursor-pointer hover:text-main-red" />
                 </Link>
                 <IoSettingsOutline size={23} className="cursor-pointer hover:text-main-red" />

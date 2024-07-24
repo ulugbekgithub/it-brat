@@ -1,11 +1,30 @@
+import { useState } from "react";
 import { ServiceData } from "../constants";
+import { FaPlus } from "react-icons/fa";
+import { RiCloseLine } from "react-icons/ri";
+import AddProjects from "./addProjects";
 
 export default function Projects() {
+  const [click, setClick] = useState(false);
+  const handleClick = () => {
+    setClick(!click);
+  };
+
   return (
     <div className="px-5">
-      <div className="">
+      <div className="flex gap-2">
         <h1 className="text-main-white text-3xl font-semibold">Проекты</h1>
-
+        <button className="transition mt-2" onClick={handleClick}>
+          {click ? (
+            <RiCloseLine color="red" size={20} />
+          ) : (
+            <FaPlus color="white" />
+          )}
+        </button>
+      </div>
+      {click ? (
+        <AddProjects />
+      ) : (
         <div className="w-full h-full grid lg:grid-cols-2 grid-cols-1 gap-5 py-3">
           {ServiceData.map((item) => (
             <div key={item.title} className="w-full h-full">
@@ -20,18 +39,20 @@ export default function Projects() {
                     {item.title}
                   </h1>
                   <div className="flex items-end justify-between">
-                  <p className="lg:text-[18px] text-second-color">
-                    от <br />
-                    {item.price} р.
-                  </p>
-                  <a className="text-main-red underline" href="">Подробнее</a>
+                    <p className="lg:text-[18px] text-second-color">
+                      от <br />
+                      {item.price} р.
+                    </p>
+                    <a className="text-main-red underline" href="">
+                      Подробнее
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
+      )}
     </div>
   );
 }
