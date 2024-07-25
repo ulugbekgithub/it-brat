@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { LiaEditSolid } from "react-icons/lia";
 import { RiDeleteBinLine } from "react-icons/ri";
 
 export default function Account() {
+  const [editClick,setEditClick]=useState(false)
+
+  const handleEditClick=()=>{
+    setEditClick(!editClick)
+  }
+
   return (
     <div className="w-full h-full bg-main-black rounded-lg py-5">
       <div className="w-full flex justify-between items-center">
@@ -9,7 +16,7 @@ export default function Account() {
           Резюме
         </h2>
         <div className="flex gap-2">
-          <button>
+          <button onClick={handleEditClick}>
             <LiaEditSolid color="white" size={20} />
           </button>
           <button>

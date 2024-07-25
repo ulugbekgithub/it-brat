@@ -16,7 +16,7 @@ export default function Login() {
   const handleSubmit=(e)=>{
     e.preventDefault()
     dispatch(login({username:userName,password})).then(action=>{
-      localStorage.setItem("accessToken",action.payload.token)
+      localStorage.setItem("accessToken",action.payload)
       navigate('/profile')
     })
     

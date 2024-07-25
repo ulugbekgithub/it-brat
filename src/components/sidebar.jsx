@@ -27,16 +27,15 @@ export default function Sidebar() {
           </div>
           <ul className="flex flex-col py-4 px-10">
             <li>
-              <a
+              <div
                 onClick={() => setAccardionOpen(!accardionOpen)}
-                href="#"
-                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
+                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer"
               >
-                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
+                <span className="inline-flex  items-center justify-center h-12 w-12 text-lg">
                   <AiOutlineHeart color="red" />
                 </span>
                 <span className="text-sm font-medium">Избранное</span>
-              </a>
+              </div>
 
               <div
                 className={`px-12 grid overflow-hidden transition-all duration-300 ease-in-out ${
@@ -45,122 +44,75 @@ export default function Sidebar() {
                     : "grid-rows-[0fr] opacity-0"
                 }`}
               >
-                <div className="overflow-hidden">
+                <div className="flex flex-col overflow-hidden">
                   <Link to={"/profile/projects"}>
-                    <a
-                      href="#"
-                      className="flex flex-row items-center transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
-                    >
-                      <span className="text-sm font-medium text-second-color">
-                        Проекты
-                      </span>
-                    </a>
+                    <span className="text-sm font-medium text-second-color hover:text-main-red">
+                      Проекты
+                    </span>
                   </Link>
                   <Link to={"/profile/resume"}>
-                    <a
-                      href="#"
-                      className="flex flex-row items-center transform hover:translate-x-2 transition-transform ease-in duration-200  hover:text-main-red"
-                    >
-                      <span className="text-sm font-medium text-second-color">
-                        Резюме
-                      </span>
-                    </a>
+                    <span className="text-sm font-medium text-second-color hover:text-main-red">
+                      Резюме
+                    </span>
                   </Link>
                 </div>
               </div>
             </li>
-            <li>
+            <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
               <Link to={"/profile/search"}>
-                <a
-                  href="#"
-                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
-                >
-                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
-                    <IoSearch />
-                  </span>
-                  <span className="text-sm font-medium">Поиск</span>
-                </a>
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
+                  <IoSearch />
+                </span>
+                <span className="text-sm font-medium">Поиск</span>
               </Link>
             </li>
-            <li>
+            <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
               <Link to={"/profile/projects"}>
-              <a
-                href="#"
-                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
-              >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <TiDocumentText />
                 </span>
                 <span className="text-sm font-medium">Проекты</span>
-              </a>
               </Link>
             </li>
-            <li>
+            <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
               <Link to={"/profile/accaunt"}>
-                <a
-                  href="#"
-                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
-                >
-                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
-                    <CgProfile />
-                  </span>
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
+                  <CgProfile />
+                </span>
 
-                  <span className="text-sm font-medium">Профиль</span>
-                </a>
+                <span className="text-sm font-medium">Профиль</span>
               </Link>
             </li>
-            <li>
-              <a
-                href="#"
-                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
-              >
-                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
-                  <IoDocumentTextOutline />
-                </span>
-                <span className="text-sm font-medium">Резюме</span>
-              </a>
+            <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
+              <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
+                <IoDocumentTextOutline />
+              </span>
+              <span className="text-sm font-medium">Резюме</span>
             </li>
-            <li>
+            <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
               <Link to={"/profile/chat"}>
-                <a
-                  href="#"
-                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
-                >
-                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
-                    <BsChatLeftDots />
-                  </span>
-                  <span className="text-sm font-medium">Чат</span>
-                </a>
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
+                  <BsChatLeftDots />
+                </span>
+                <span className="text-sm font-medium">Чат</span>
               </Link>
             </li>
           </ul>
 
           <div className="px-12 py-20">
             <ul>
-              <li>
-                <a
-                  href="#"
-                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
-                >
-                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
-                    <IoSettingsOutline />
-                  </span>
-                  <span className="text-sm font-medium">Настройки</span>
-                </a>
+              <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
+                  <IoSettingsOutline />
+                </span>
+                <span className="text-sm font-medium">Настройки</span>
               </li>
 
-              <li>
-                <a
-                  href="#"
-                  className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
-                >
-                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
-                    <IoExitOutline color="red" />
-                  </span>
-                  <span className="text-sm font-medium text-main-red">
-                    Выход
-                  </span>
-                </a>
+              <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
+                  <IoExitOutline color="red" />
+                </span>
+                <span className="text-sm font-medium text-main-red">Выход</span>
               </li>
             </ul>
           </div>

@@ -10,8 +10,18 @@ import Chat from "./components/chat";
 import Search from "./components/search";
 import Account from "./components/account";
 import Notification from "./components/notification";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getCurrentUser } from "./app/reducers/authSlice";
 
 function App() {
+
+  // const dispatch=useDispatch()
+
+  // useEffect(()=>{
+  //   dispatch(getCurrentUser())
+  // },[dispatch])
+
   return (
     <>
       <Routes>

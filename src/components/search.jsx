@@ -11,7 +11,7 @@ export default function Search() {
         </div>
         <div className="flex gap-5 py-5 overflow-x-auto w-full scrollbar-x-thin">
           {DirectionData.map((item) => (
-            <div key={item.title}>
+            <div key={item.id}>
               <div
                 className="w-[366px] h-[195px] bg-cover bg-center rounded-xl"
                 style={{
@@ -36,7 +36,7 @@ export default function Search() {
           </div>
           <div className="flex gap-5 py-5 overflow-x-auto w-full scrollbar-x-thin">
             {ServiceData.map((item) => (
-              <div key={item.title} className="w-full h-full ">
+              <div key={item.id} className="w-full h-full ">
                 <div
                   className="w-[298px] h-[335px] bg-cover bg-center rounded-xl flex items-end"
                   style={{

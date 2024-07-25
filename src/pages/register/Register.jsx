@@ -16,9 +16,10 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log("register",userName, firstName, lastName, email, password, repeatPwd);
-    dispatch(register({username:userName,first_nama:firstName,last_name:lastName,email,password,confirm_password:repeatPwd})).then(action=>{
-      localStorage.setItem('accessToken',action.payload.token);
-      navigate('/sign-in')
+    dispatch(register({username:userName,first_name:firstName,last_name:lastName,email,password,confirm_password:repeatPwd})).then(action=>{
+      console.log(action);
+      localStorage.setItem('accessToken',action.payload);
+      navigate('/profile')
     })
   };
 
@@ -86,7 +87,12 @@ export default function Register() {
           >
             <span>Регистрация</span>
           </button>
+          <a href="/sign-in">
+          <span className="text-main-white">Есть аккаунт? </span>
+          <span className="text-main-red">Войдите</span>
+        </a>
         </form>
+        
       </div>
     </div>
   );

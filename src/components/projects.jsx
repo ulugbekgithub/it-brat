@@ -27,7 +27,7 @@ export default function Projects() {
       ) : (
         <div className="w-full h-full grid lg:grid-cols-2 grid-cols-1 gap-5 py-3">
           {ServiceData.map((item) => (
-            <div key={item.title} className="w-full h-full">
+            <div key={item.id} className="w-full h-full">
               <div
                 className="bg-cover flex items-end bg-center w-[100%] h-[335px] rounded-lg"
                 style={{
