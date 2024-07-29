@@ -41,13 +41,13 @@ export default function SwiperRezume() {
                     backgroundImage: `url(${item.img})`,
                   }}
                 />
-                <div className="h-full w-full bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur bg-opacity-20 backdrop-saturate-50 backdrop-contrast-100 flex justify-between items-center p-2 py-5">
+                <div className=" bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur bg-opacity-20 backdrop-saturate-50 backdrop-contrast-100 flex justify-between items-center p-2 py-5 mt-[-95px] rounded-xl">
                 <div>
-                  <h5 className="text-main-white">{item.name}</h5>
-                  <span className="text-second-color">{item.job}</span>
+                  <h5 className="text-main-white text-lg">{item.name}</h5>
+                  <span className="text-second-color text-xs">{item.job}</span>
                 </div>
                 <div className="transform hover:translate-x-2 transition-transform ease-in duration-200 cursor-pointercursor-pointer">
-                  <GrLinkNext color="white" size={10} />
+                  <GrLinkNext color="white" size={30} />
                 </div>
               </div>
                 

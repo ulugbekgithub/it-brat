@@ -11,10 +11,20 @@ import { CgProfile } from "react-icons/cg";
 import { BsChatLeftDots } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../app/reducers/authSlice";
 
 export default function Sidebar() {
   const [accardionOpen, setAccardionOpen] = useState(false);
+
+  const dispatch=useDispatch()
+  const navigate =useNavigate()
+
+  const logOutProfile=()=>{
+    dispatch(logout())
+    navigate("/")
+  }
 
   return (
     <div>
@@ -83,12 +93,15 @@ export default function Sidebar() {
                 <span className="text-sm font-medium">Профиль</span>
               </Link>
             </li>
+            <Link to={'/profile/resume'}>
+            
             <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
               <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                 <IoDocumentTextOutline />
               </span>
               <span className="text-sm font-medium">Резюме</span>
             </li>
+            </Link>
             <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
               <Link to={"/profile/chat"}>
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
@@ -108,7 +121,7 @@ export default function Sidebar() {
                 <span className="text-sm font-medium">Настройки</span>
               </li>
 
-              <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
+              <li onClick={logOutProfile} className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <IoExitOutline color="red" />
                 </span>

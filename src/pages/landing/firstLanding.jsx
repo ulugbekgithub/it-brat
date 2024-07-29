@@ -8,7 +8,6 @@ import commandMan from "../../assets/commandMan.webp";
 import bratman from "../../assets/bratman.png";
 import bratgirl from "../../assets/bratgirl.png";
 
-import { DirectionData } from "../../constants";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -18,14 +17,21 @@ import DesktopSwiper from "../../components/desktopSwiper";
 import MobileSwiper from "../../components/mobileSwiper";
 import ForCompony from "../../components/forCompony";
 import ForFreelance from "../../components/forFreelance";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ScrollComponent from "../../components/scrollComponent";
 import SwiperRezume from "../../components/swiperRezume";
+import { useDispatch, useSelector } from "react-redux";
+import { getProjectsCategory } from "../../app/reducers/projectsSlice";
 
 export default function FirstLanding() {
   const [openComponentCompany, setOpenComponentCompany] = useState(true);
- 
- 
+  const {projectsCategory}=useSelector((state)=>state.projects)
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProjectsCategory());
+  }, [dispatch]);
+
   return (
     <div>
       <Header />
@@ -45,10 +51,14 @@ export default function FirstLanding() {
 
           <div className="flex flex-col gap-[31px] md:px-0 px-5">
             <button className="w-full max-w-[346px] h-[70px] text-main-white border-[3px] border-solid border-main-red  bg-gray-7800 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30">
-              <span className="font-bold text-[clamp(16px,3vw,24px)]">НАЙТИ ПРОЕКТ</span>
+              <span className="font-bold text-[clamp(16px,3vw,24px)]">
+                НАЙТИ ПРОЕКТ
+              </span>
             </button>
             <button className="w-full max-w-[346px] h-[70px] bg-main-red text-main-black rounded box-shadow">
-              <span className="font-bold text-[clamp(16px,3vw,24px)]">НАЙТИ КОМАНДУ</span>
+              <span className="font-bold text-[clamp(16px,3vw,24px)]">
+                НАЙТИ КОМАНДУ
+              </span>
             </button>
           </div>
         </div>
@@ -60,7 +70,9 @@ export default function FirstLanding() {
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={account} alt="account" />
             </div>
-            <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">СОЗДАЙТЕ АККАУНТ</h4>
+            <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">
+              СОЗДАЙТЕ АККАУНТ
+            </h4>
             <p className="w-full max-w-[220px] text-second-color text-center text-[clamp(12px,3vw,14px)]">
               Зарегистрируйтесь и заполните профиль в личном кабинете
             </p>
@@ -69,7 +81,9 @@ export default function FirstLanding() {
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={rezume} alt="rezume" />
             </div>
-            <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">ЗАПОЛНИТЕ РЕЗЮМЕ</h4>
+            <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">
+              ЗАПОЛНИТЕ РЕЗЮМЕ
+            </h4>
             <p className="w-full  text-second-color  text-[clamp(12px,3vw,14px)]">
               Укажите свои навыки и предпочтения
             </p>
@@ -78,7 +92,9 @@ export default function FirstLanding() {
             <div className="w-[100px] h-[73.44px] mx-auto mb-10">
               <img src={search} alt="search" />
             </div>
-            <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">ИЩИТЕ И СОЗДАВАЙТЕ</h4>
+            <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">
+              ИЩИТЕ И СОЗДАВАЙТЕ
+            </h4>
             <p className="w-full max-w-[220px] text-second-color text-center text-[clamp(12px,3vw,14px)]">
               Ищите интересные проекты и команду или создавайте свои
             </p>
@@ -161,19 +177,26 @@ export default function FirstLanding() {
           </div>
           <div className="w-full md:min-h-[890px] p-5 flex flex-col justify-center items-center">
             <h3 className="text-main-white text-center text-[clamp(24px,3vw,48px)] font-bold">
-              ПРЕИМУЩЕСТВА <span className="text-main-red text-[clamp(24px,3vw,48px)]">ITBRAT</span>
+              ПРЕИМУЩЕСТВА{" "}
+              <span className="text-main-red text-[clamp(24px,3vw,48px)]">
+                ITBRAT
+              </span>
             </h3>
             <div className="w-full max-w-[1196px] flex flex-col justify-between items-center mt-[42px]">
               <div className="w-full max-w-[295px] h-[39px] flex md:hidden items-center justify-between bg-[#424242] rounded p-3">
                 <button
-                  onClick={()=>setOpenComponentCompany(true)}
-                  className={`w-full max-w-[141px] min-h-[31px] text-main-white rounded ${openComponentCompany?'bg-[#560303]':''}`}
+                  onClick={() => setOpenComponentCompany(true)}
+                  className={`w-full max-w-[141px] min-h-[31px] text-main-white rounded ${
+                    openComponentCompany ? "bg-[#560303]" : ""
+                  }`}
                 >
                   <span className="text-xs">Для компаний</span>
                 </button>
                 <button
-                  onClick={()=>setOpenComponentCompany(false)}
-                  className={`w-full max-w-[141px] min-h-[31px] text-main-white rounded ${!openComponentCompany?'bg-[#560303]':''}`}
+                  onClick={() => setOpenComponentCompany(false)}
+                  className={`w-full max-w-[141px] min-h-[31px] text-main-white rounded ${
+                    !openComponentCompany ? "bg-[#560303]" : ""
+                  }`}
                 >
                   <span className="text-xs">Для фрилансеров</span>
                 </button>
@@ -213,8 +236,10 @@ export default function FirstLanding() {
             </button>
           </div>
 
-          <h1 className="text-main-white text-[clamp(24px,3vw,48px)] text-center font-bold">ПОСЛЕДНИЕ РАЗМЕЩЕННЫЕ <span className="text-main-red">ПРОЕКТЫ</span></h1>
-          
+          <h1 className="text-main-white text-[clamp(24px,3vw,48px)] text-center font-bold">
+            ПОСЛЕДНИЕ РАЗМЕЩЕННЫЕ <span className="text-main-red">ПРОЕКТЫ</span>
+          </h1>
+
           <div className="w-full h-full md:block hidden">
             <DesktopSwiper />
           </div>
@@ -235,17 +260,17 @@ export default function FirstLanding() {
           </div>
 
           <div className="w-full h-[500px] grid grid-cols-2 md:grid-cols-4 gap-[44px] mt-[58px] p-5">
-            {DirectionData.map((item) => (
+            {projectsCategory.map((item) => (
               <div
-                key={item.title}
+                key={item.id}
                 className=" bg-cover bg-center  direction-box-shadow"
                 style={{
-                  backgroundImage: `url(${item.img})`,
+                  backgroundImage: `url(${item.logo})`,
                 }}
               >
-                <div className="h-full w-full flex justify-center items-center bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
+                <div className="h-full w-full flex justify-center items-center bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
                   <h4 className="text-main-white text-[clamp(12px,3vw,24px)] w-[170px] h-[62px] font-bold text-center flex justify-center items-center">
-                    {item.title}
+                    {item.name}
                   </h4>
                 </div>
               </div>

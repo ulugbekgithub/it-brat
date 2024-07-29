@@ -12,7 +12,7 @@ export default function Header() {
 
   const content = (
     <>
-      <div className="md:hidden block absolute top-16 w-full h-full left-0 right-0 bg-main-black transition">
+      <div className="md:hidden block absolute top-16 w-full h-screen z-10 left-0 right-0 bg-main-black transition">
         <ul className="text-center text-xl p-20 text-main-white">
           <li className="cursor-pointer hover:text-main-red my-4 py-4">
             ГЛАВНАЯ

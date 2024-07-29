@@ -2,33 +2,59 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../app/reducers/authSlice";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Login() {
+  const [userName, setUserName] = useState();
+  const [password, setPassword] = useState();
 
+  const dispatch = useDispatch();
 
-  const [userName,setUserName]=useState()
-  const [password,setPassword]=useState()
+  const navigate = useNavigate();
 
-  const dispatch=useDispatch()
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(login({ username: userName, password })).then((action) => {
+      if (action.payload) {
+        localStorage.setItem("accessToken", action.payload);
+        navigate("/profile");
+        toast.success("login success", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      } else {
+        toast.error("This user is not available to the system", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
 
-  const navigate=useNavigate()
-
-  const handleSubmit=(e)=>{
-    e.preventDefault()
-    dispatch(login({username:userName,password})).then(action=>{
-      localStorage.setItem("accessToken",action.payload)
-      navigate('/profile')
-    })
-    
-  }
+        navigate("/sign-in");
+      }
+    });
+  };
 
   return (
     <div>
       <div className="w-screen h-screen flex justify-center items-center bg-main-black">
-        <form onSubmit={handleSubmit} className="p-10 bg-[#101010] rounded flex justify-center items-center flex-col shadow-2xl shadow-main-red">
+        <form
+          onSubmit={handleSubmit}
+          className="p-10 bg-[#101010] rounded flex justify-center items-center flex-col shadow-2xl shadow-main-red"
+        >
           <p className="mb-5 text-3xl uppercase text-main-white">Вход</p>
           <input
-          onChange={(e)=>setUserName(e.target.value)}
+            onChange={(e) => setUserName(e.target.value)}
             type="text"
             name="username"
             className="mb-5 p-3 w-80 focus:border-purple-700 rounded border-2 outline-none"
@@ -36,7 +62,7 @@ export default function Login() {
             required
           />
           <input
-          onChange={(e)=>setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             type="password"
             name="password"
             className="mb-5 p-3 w-80 focus:border-purple-700 rounded border-2 outline-none"
@@ -50,8 +76,21 @@ export default function Login() {
           >
             <span>Вход</span>
           </button>
+          
         </form>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function Projects() {
         </button>
       </div>
       {click ? (
-        <AddProjects />
+        <AddProjects stateValue={click} setStateValue={setClick}/>
       ) : (
         <div className="w-full h-full grid lg:grid-cols-2 grid-cols-1 gap-5 py-3">
           {ServiceData.map((item) => (
