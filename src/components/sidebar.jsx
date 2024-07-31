@@ -55,7 +55,7 @@ export default function Sidebar() {
                 }`}
               >
                 <div className="flex flex-col overflow-hidden">
-                  <Link to={"/profile/projects"}>
+                  <Link to={"/profile/favorite-projects"}>
                     <span className="text-sm font-medium text-second-color hover:text-main-red">
                       Проекты
                     </span>

@@ -10,19 +10,22 @@ import Chat from "./components/chat";
 import Search from "./components/search";
 import Account from "./components/account";
 import Notification from "./components/notification";
-
+import NotFound from "./pages/notFound/notFound";
+import FavoriteProject from "./components/favoriteProject";
 
 function App() {
-
- 
-
   return (
     <>
       <Routes>
         <Route path="/" element={<FirstLanding />} />
+        <Route path="/notFound" element={<NotFound />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
         <Route path="/profile" element={<Profile />}>
+          <Route
+            path="/profile/favorite-projects"
+            element={<FavoriteProject />}
+          />
           <Route path="/profile/projects" element={<Projects />} />
           <Route path="/profile/resume" element={<Rezume />} />
           <Route path="/profile/chat" element={<Chat />} />

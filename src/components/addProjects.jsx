@@ -7,27 +7,28 @@ import {
 } from "../app/reducers/projectsSlice"; // Import the createProject action
 import { useForm } from "react-hook-form";
 
-export default function AddProjects({stateValue, setStateValue}) {
+export default function AddProjects({ stateValue, setStateValue }) {
   const [currency, setCurrency] = useState("1");
   const { register, handleSubmit, reset } = useForm();
   const { projectsCategory } = useSelector((state) => state.projects);
   const dispatch = useDispatch();
 
+  
   useEffect(() => {
     dispatch(getProjectsCategory());
   }, [dispatch]);
 
-  const handleCancel=()=>{
-    setStateValue(!stateValue)
-  }
+  const handleCancel = () => {
+    setStateValue(!stateValue);
+  };
 
   const onSubmit = (data) => {
-    console.log({ ...data, valute: currency, image: data.image[0] });
     if (data.image && data.image[0]) {
       dispatch(
         addProjects({ ...data, valuta: currency, image: data.image[0] })
       );
-      reset(); // Reset form after submission
+      reset();
+      setStateValue(!stateValue) // Reset form after submission
     }
   };
 
@@ -142,7 +143,7 @@ export default function AddProjects({stateValue, setStateValue}) {
                   <option value="" className="text-md">
                     выберите категорию
                   </option>
-                  {projectsCategory.map((item) => (
+                  {projectsCategory?.map((item) => (
                     <option key={item.id} value={item.id} className="text-xs">
                       {item.name}
                     </option>
@@ -159,6 +160,7 @@ export default function AddProjects({stateValue, setStateValue}) {
           </h3>
 
           <textarea
+            required
             className="bg-[#2E2E2E] w-full min-h-[265px] text-main-white mt-2 rounded-lg"
             {...register("description")}
           ></textarea>
@@ -166,13 +168,14 @@ export default function AddProjects({stateValue, setStateValue}) {
 
         <div className="flex gap-8 justify-center mt-[30px]">
           <button
+            
             type="submit"
             className="w-full max-w-[124px] h-[35px] bg-[#680202] rounded-lg text-main-white text-[clamp(12px,3vw,16px)] font-medium"
           >
             Сохранить
           </button>
           <button
-          onClick={handleCancel}
+            onClick={handleCancel}
             type="button"
             className="w-full max-w-[124px] h-[35px] bg-[#2E2E2E] rounded-lg text-main-white text-[clamp(12px,3vw,16px)] font-medium"
           >

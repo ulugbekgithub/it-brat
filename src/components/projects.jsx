@@ -1,12 +1,47 @@
-import { useState } from "react";
-import { ServiceData } from "../constants";
+import { useState, useEffect } from "react";
 import { FaPlus } from "react-icons/fa";
 import { RiCloseLine } from "react-icons/ri";
 import AddProjects from "./addProjects";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  deleteLike,
+  getProjectById,
+  getProjects,
+  postLike,
+} from "../app/reducers/projectsSlice.js";
+import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
+import ProjectInfo from "./projectInfo.jsx";
 
 export default function Projects() {
   const [click, setClick] = useState(false);
+  const [statuslike, setStatuslike] = useState(false);
+  const [infoProject, setInfoProject] = useState(false);
+  const { showProjects } = useSelector((state) => state.projects);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProjects());
+  }, [statuslike]);
+
   const handleClick = () => {
+    setClick(!click);
+    setInfoProject(false);
+  };
+
+  const handleLikeClick = async (id) => {
+    await dispatch(postLike(id));
+    setStatuslike(!statuslike);
+  };
+
+  const handleDeleteLike = async (id) => {
+    await dispatch(deleteLike(id));
+    setStatuslike(!statuslike);
+  };
+
+  const getProjectInfo = async (id) => {
+    await dispatch(getProjectById(id));
+    setInfoProject(!infoProject);
     setClick(!click);
   };
 
@@ -22,37 +57,65 @@ export default function Projects() {
           )}
         </button>
       </div>
-      {click ? (
-        <AddProjects stateValue={click} setStateValue={setClick}/>
-      ) : (
+      {!infoProject && !click ? (
         <div className="w-full h-full grid lg:grid-cols-2 grid-cols-1 gap-5 py-3">
-          {ServiceData.map((item) => (
-            <div key={item.id} className="w-full h-full">
+          {showProjects.results?.map((item) => (
+            <div key={item.id} className="w-full h-full ">
               <div
-                className="bg-cover flex items-end bg-center w-[100%] h-[335px] rounded-lg"
+                className="bg-cover flex items-end  bg-center w-[100%] h-[335px] rounded-lg"
                 style={{
-                  backgroundImage: `url(${item.backgroundImage})`,
+                  backgroundImage: `url(${item.image})`,
                 }}
               >
-                <div className="w-full relative flex flex-col gap-5 p-5">
+                <div className="w-full relative flex flex-col gap-10 p-5">
+                  <button className="absolute top-[-150px] right-[20px]">
+                    {item.favorite ? (
+                      <IoMdHeart
+                        onClick={() => handleDeleteLike(item.id)}
+                        className=" cursor-pointer hover:scale-110"
+                        color="red"
+                        size={30}
+                      />
+                    ) : (
+                      <IoMdHeartEmpty
+                        onClick={() => handleLikeClick(item.id)}
+                        className="cursor-pointer hover:scale-110"
+                        color="white"
+                        size={30}
+                      />
+                    )}
+                  </button>
+
                   <h1 className="text-xl text-main-white font-semibold lg:text-2xl">
-                    {item.title}
+                    {item.name}
                   </h1>
                   <div className="flex items-end justify-between">
                     <p className="lg:text-[18px] text-second-color">
                       от <br />
-                      {item.price} р.
+                      {item.price} {item.valuta}
                     </p>
-                    <a className="text-main-red underline" href="">
+                    <span
+                      onClick={() => getProjectInfo(item.id)} 
+                      className="text-main-red underline cursor-pointer"
+                    >
                       Подробнее
-                    </a>
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
+      ) : (
+        ""
       )}
+
+      {click && !infoProject ? (
+        <AddProjects stateValue={click} setStateValue={setClick} />
+      ) : (
+        ""
+      )}
+      {click && infoProject ? <ProjectInfo /> : ""}
     </div>
   );
 }

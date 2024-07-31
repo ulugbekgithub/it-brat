@@ -5,7 +5,7 @@ import Footer from "../../components/footer";
 import logo from "../../assets/logo.png";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { BiMenuAltRight } from "react-icons/bi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   IoDocumentTextOutline,
   IoExitOutline,
@@ -21,11 +21,18 @@ import { AiOutlineHeart } from "react-icons/ai";
 export default function Profile() {
   const navigate= useNavigate();
   const [accardionOpen, setAccardionOpen] = useState(false);
+  const token =localStorage.getItem("accessToken")
 
   const [click, setClick] = useState(false);
   const handleClick = () => {
     setClick(!click);
   };
+
+  useEffect(()=>{
+    if(!token){
+      navigate("/notFound")
+    }
+  },[])
 
   const goToProject =()=>{
     navigate("/profile/projects")
