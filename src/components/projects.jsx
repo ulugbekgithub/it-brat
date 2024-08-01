@@ -62,13 +62,13 @@ export default function Projects() {
           {showProjects.results?.map((item) => (
             <div key={item.id} className="w-full h-full ">
               <div
-                className="bg-cover flex items-end  bg-center w-[100%] h-[335px] rounded-lg"
+                className="bg-cover flex items-end  bg-center w-[100%] h-[335px] rounded-lg "
                 style={{
                   backgroundImage: `url(${item.image})`,
                 }}
               >
                 <div className="w-full relative flex flex-col gap-10 p-5">
-                  <button className="absolute top-[-150px] right-[20px]">
+                  <button className="absolute top-[-150px] right-[20px] flex items-center justify-center w-10 h-10 rounded-full bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40">
                     {item.favorite ? (
                       <IoMdHeart
                         onClick={() => handleDeleteLike(item.id)}

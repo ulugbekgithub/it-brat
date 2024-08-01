@@ -12,6 +12,7 @@ import Account from "./components/account";
 import Notification from "./components/notification";
 import NotFound from "./pages/notFound/notFound";
 import FavoriteProject from "./components/favoriteProject";
+import RoleSelection from "./pages/roll/roleSelection";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/notFound" element={<NotFound />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
+        <Route path="/role" element={<RoleSelection />} />
         <Route path="/profile" element={<Profile />}>
           <Route
             path="/profile/favorite-projects"
