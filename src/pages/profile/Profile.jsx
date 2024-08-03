@@ -60,7 +60,23 @@ export default function Profile() {
     setClick(false);
   };
 
-  const [open, setOpen] = useState(true);
+  const goToLogout = () => {
+    navigate("/");
+    localStorage.removeItem("accessToken");
+    setClick(false)
+  }
+
+  const goToSettings = () => {
+    navigate("/profile/settings");
+    setClick(false);
+  };
+  
+  const goToFavoriteProject = () => {
+    navigate("/profile/favorite-projects");
+    setClick(false);
+  };
+
+  const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(!open);
@@ -72,16 +88,15 @@ export default function Profile() {
         <div className="flex flex-col  items-center w-full max-w-[393px]  bg-main-black text-main-white overflow-hidden">
           <ul className="flex flex-col py-4 px-10 text-base">
             <li className="text-base">
-              <a
+              <span
                 onClick={() => setAccardionOpen(!accardionOpen)}
-                href="#"
                 className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <AiOutlineHeart color="red" />
                 </span>
                 <span className="text-sm font-medium">Избранное</span>
-              </a>
+              </span>
 
               <div
                 className={`px-12 grid overflow-hidden transition-all duration-300 ease-in-out ${
@@ -91,54 +106,51 @@ export default function Profile() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <a
-                    onClick={goToProject}
-                    href="#"
+                  <span
+                    onClick={goToFavoriteProject}
+                   
                     className="flex flex-row items-center transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                   >
                     <span className="text-sm font-medium text-second-color">
                       Проекты
                     </span>
-                  </a>
-                  <a
+                  </span>
+                  <span
                     onClick={goToResume}
-                    href="#"
                     className="flex flex-row items-center transform hover:translate-x-2 transition-transform ease-in duration-200  hover:text-main-red"
                   >
                     <span className="text-sm font-medium text-second-color">
                       Резюме
                     </span>
-                  </a>
+                  </span>
                 </div>
               </div>
             </li>
             <li className="text-base">
-              <a
+              <span
                 onClick={goToSearch}
-                href="#"
                 className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <IoSearch />
                 </span>
                 <span className="text-sm font-medium">Поиск</span>
-              </a>
+              </span>
             </li>
             <li className="text-base">
-              <a
-                href="#"
+              <span
+              onClick={goToProject}
                 className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <TiDocumentText />
                 </span>
                 <span className="text-sm font-medium">Проекты</span>
-              </a>
+              </span>
             </li>
             <li className="text-base">
-              <a
+              <span
                 onClick={goToProfile}
-                href="#"
                 className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
@@ -146,50 +158,49 @@ export default function Profile() {
                 </span>
 
                 <span className="text-sm font-medium">Профиль</span>
-              </a>
+              </span>
             </li>
             <li className="text-base">
-              <a
-                href="#"
+              <span
+                onClick={goToResume}
                 className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <IoDocumentTextOutline />
                 </span>
                 <span className="text-sm font-medium">Резюме</span>
-              </a>
+              </span>
             </li>
             <li className="text-base">
-              <a
+              <span
                 onClick={goToChat}
-                href="#"
                 className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <BsChatLeftDots />
                 </span>
                 <span className="text-sm font-medium">Чат</span>
-              </a>
+              </span>
             </li>
           </ul>
 
           <div className="px-12 py-20">
             <ul>
               <li className="text-base">
-                <a
-                  href="#"
+                <span
+                onClick={goToSettings}
                   className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                 >
                   <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                     <IoSettingsOutline />
                   </span>
                   <span className="text-sm font-medium">Настройки</span>
-                </a>
+                </span>
               </li>
 
               <li className="text-base">
-                <a
-                  href="#"
+                <span
+                onClick={goToLogout}
                   className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                 >
                   <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
@@ -198,7 +209,7 @@ export default function Profile() {
                   <span className="text-sm font-medium text-main-red">
                     Выход
                   </span>
-                </a>
+                </span>
               </li>
             </ul>
           </div>
@@ -208,7 +219,7 @@ export default function Profile() {
   );
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="w-full flex md:flex-row flex-col md:justify-between justify-center bg-main-black">
         <div className="">
           <div className="w-full md:hidden flex justify-between p-10">
@@ -237,21 +248,27 @@ export default function Profile() {
         <div className="w-full  h-[100vh] max-w-[308px] bg-main-black md:block hidden">
           <ProfileSidebar />
         </div>
+        <div className="relative">
+      <div
+        className={`fixed top-0 right-0 h-full transition-transform duration-300 ease-in-out transform ${
+          open ? "translate-x-0" : "translate-x-full"
+        } md:hidden max-w-[308px] w-full `}
+      >
+        <ProfileBurger />
+      </div>
+      <div
+        className={`fixed top-0 right-0 transition-transform duration-300 ease-in-out transform ${
+          open ? "-translate-x-[308px]" : "translate-x-0"
+        } md:hidden`}
+      >
         <div
-          className={`flex top-0  absolute items-center ${
-            open
-              ? "w-full max-w-[308px]  md:hidden flex items-center absolute -right-[280px]"
-              : "right-0 absolute "
-          }`}
+          onClick={handleOpen}
+          className="w-10 h-10 mt-[400px] mr-[-20px] flex items-center justify-start  bg-gray-700 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30"
         >
-          <div
-            onClick={handleOpen}
-            className="w-10 h-10 mr-[-20px]  flex items-center justify-center bg-gray-700  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30"
-          >
-            {open ? <GrPrevious color="white" /> : <GrNext color="white"/>}
-          </div>
-          <ProfileBurger />
+          {open ? <GrNext color="white" /> :  <GrPrevious color="white" />}
         </div>
+      </div>
+    </div>
       </div>
       <div className="w-full flex justify-center items-center bg-main-black">
         <div className="w-full max-w-[1196px]  flex justify-center items-center">
