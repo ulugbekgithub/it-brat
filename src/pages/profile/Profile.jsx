@@ -12,7 +12,7 @@ import {
   IoSearch,
   IoSettingsOutline,
 } from "react-icons/io5";
-import { GrPrevious } from "react-icons/gr";
+import { GrNext, GrPrevious } from "react-icons/gr";
 import { BsChatLeftDots } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
@@ -59,10 +59,17 @@ export default function Profile() {
     navigate("/profile/chat");
     setClick(false);
   };
+
+  const [open, setOpen] = useState(true);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
   const contentSidebar = (
     <>
-      <div className="min-h-screen flex flex-row bg-main-black p-5 transition-transform duration-500 ease-in-out translate-y-3">
-        <div className="flex flex-col items-center w-full max-w-[393px]  bg-main-black text-main-white overflow-hidden">
+      <div className="min-h-screen flex flex-row bg-main-black  transition-transform duration-500 ease-in-out translate-y-3">
+        <div className="flex flex-col  items-center w-full max-w-[393px]  bg-main-black text-main-white overflow-hidden">
           <ul className="flex flex-col py-4 px-10 text-base">
             <li className="text-base">
               <a
@@ -224,17 +231,26 @@ export default function Profile() {
         <div className="w-full max-w-[308px] md:block hidden">
           <Sidebar />
         </div>
-        <div className="md:w-[calc(100%-616px)] w-full  md:p-0 p-10 bg-main-black">
+        <div className="md:w-[calc(100%-616px)]  w-full  md:p-0 p-10 bg-main-black">
           <CenterMenu />
         </div>
-        <div className="w-full   max-w-[308px] bg-main-black md:block hidden">
+        <div className="w-full  h-[100vh] max-w-[308px] bg-main-black md:block hidden">
           <ProfileSidebar />
         </div>
-        <div className=" w-full max-w-[308px]  md:hidden flex  items-center absolute right-0 top-16">
-          <div className="w-10 h-10 mb-[300px] mr-[-20px]  flex items-center justify-center bg-gray-700  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30">
-          <GrPrevious  color="white"/>
+        <div
+          className={`flex top-0  absolute items-center ${
+            open
+              ? "w-full max-w-[308px]  md:hidden flex items-center absolute -right-[280px]"
+              : "right-0 absolute "
+          }`}
+        >
+          <div
+            onClick={handleOpen}
+            className="w-10 h-10 mr-[-20px]  flex items-center justify-center bg-gray-700  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30"
+          >
+            {open ? <GrPrevious color="white" /> : <GrNext color="white"/>}
           </div>
-          <ProfileBurger/>
+          <ProfileBurger />
         </div>
       </div>
       <div className="w-full flex justify-center items-center bg-main-black">
