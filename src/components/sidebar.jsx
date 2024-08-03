@@ -10,21 +10,28 @@ import { TiDocumentText } from "react-icons/ti";
 import { CgProfile } from "react-icons/cg";
 import { BsChatLeftDots } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { logout } from "../app/reducers/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentUser, logout } from "../app/reducers/authSlice";
 
 export default function Sidebar() {
   const [accardionOpen, setAccardionOpen] = useState(false);
+  const { currentUser } = useSelector((state) => state.auth);
 
-  const dispatch=useDispatch()
-  const navigate =useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
 
-  const logOutProfile=()=>{
-    dispatch(logout())
-    navigate("/")
-  }
+  useEffect(() => {
+   dispatch(getCurrentUser());
+  }, [dispatch]);
+  console.log(currentUser);
+
+  const logOutProfile = () => {
+    dispatch(logout());
+    navigate("/");
+  };
 
   return (
     <div>
@@ -36,6 +43,15 @@ export default function Sidebar() {
             </div>
           </div>
           <ul className="flex flex-col py-4 px-10">
+            <li className="">
+              
+              {currentUser?.groups?.map((item) => (
+                <div className="px-5" key={item.id}>
+                  {item.id === 2 && <div className="flex items-center gap-3"><div className="w-3 h-3 bg-green-700 rounded-full"></div> <span className="text-green-700">Работадатель</span></div>}
+                  {item.id === 3 && <div className="flex items-center gap-3"><div className="w-3 h-3 bg-red-700 rounded-full"></div> <span className="text-red-700">Соискатель</span></div>}
+                </div>
+              ))}
+            </li>
             <li>
               <div
                 onClick={() => setAccardionOpen(!accardionOpen)}
@@ -93,14 +109,13 @@ export default function Sidebar() {
                 <span className="text-sm font-medium">Профиль</span>
               </Link>
             </li>
-            <Link to={'/profile/resume'}>
-            
-            <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
-              <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
-                <IoDocumentTextOutline />
-              </span>
-              <span className="text-sm font-medium">Резюме</span>
-            </li>
+            <Link to={"/profile/resume"}>
+              <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
+                  <IoDocumentTextOutline />
+                </span>
+                <span className="text-sm font-medium">Резюме</span>
+              </li>
             </Link>
             <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
               <Link to={"/profile/chat"}>
@@ -115,13 +130,18 @@ export default function Sidebar() {
           <div className="px-12 py-20">
             <ul>
               <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
-                <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
-                  <IoSettingsOutline />
-                </span>
-                <span className="text-sm font-medium">Настройки</span>
+                <Link to={"/profile/settings"}>
+                  <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
+                    <IoSettingsOutline />
+                  </span>
+                  <span className="text-sm font-medium">Настройки</span>
+                </Link>
               </li>
 
-              <li onClick={logOutProfile} className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
+              <li
+                onClick={logOutProfile}
+                className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer"
+              >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                   <IoExitOutline color="red" />
                 </span>

@@ -17,7 +17,7 @@ export default function Login() {
     dispatch(login({ username: userName, password })).then((action) => {
       if (action.payload) {
         localStorage.setItem("accessToken", action.payload);
-        navigate("/profile");
+        navigate("/role");
         toast.success("login success", {
           position: "top-right",
           autoClose: 5000,

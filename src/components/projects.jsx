@@ -11,18 +11,25 @@ import {
 } from "../app/reducers/projectsSlice.js";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import ProjectInfo from "./projectInfo.jsx";
+import { getCurrentUser } from "../app/reducers/authSlice.js";
 
 export default function Projects() {
   const [click, setClick] = useState(false);
   const [statuslike, setStatuslike] = useState(false);
   const [infoProject, setInfoProject] = useState(false);
   const { showProjects } = useSelector((state) => state.projects);
+  const { currentUser } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getProjects());
   }, [statuslike]);
+
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, []);
+  console.log(currentUser);
 
   const handleClick = () => {
     setClick(!click);
@@ -47,15 +54,20 @@ export default function Projects() {
 
   return (
     <div className="px-5">
-      <div className="flex gap-2">
+      <div className="flex gap-2 items-center">
         <h1 className="text-main-white text-3xl font-semibold">Проекты</h1>
-        <button className="transition mt-2" onClick={handleClick}>
+        {currentUser?.groups?.map((item) => (
+          <div key={item.id}>
+            {item.id===2 && <button className="transition mt-2" onClick={handleClick}>
           {click ? (
             <RiCloseLine color="red" size={20} />
           ) : (
             <FaPlus color="white" />
           )}
-        </button>
+        </button>}
+          </div>
+        ))}
+        
       </div>
       {!infoProject && !click ? (
         <div className="w-full h-full grid lg:grid-cols-2 grid-cols-1 gap-5 py-3">
@@ -95,7 +107,7 @@ export default function Projects() {
                       {item.price} {item.valuta}
                     </p>
                     <span
-                      onClick={() => getProjectInfo(item.id)} 
+                      onClick={() => getProjectInfo(item.id)}
                       className="text-main-red underline cursor-pointer"
                     >
                       Подробнее

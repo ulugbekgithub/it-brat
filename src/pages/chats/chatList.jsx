@@ -17,13 +17,21 @@ const ChatList = () => {
       {chats.map(chat => (
         <div
           key={chat.id}
-          className={`p-2 mb-2 rounded cursor-pointer ${chat.active ? 'bg-gray-700' : 'bg-gray-800'}`}
+          className={`p-2 mb-2 rounded cursor-pointer hover:bg-sky-700   flex gap-2 ${chat.active ? 'bg-gray-700' : 'bg-gray-800'}`}
         >
-          <div className="flex justify-between">
+          <div className="avatar online">
+            <div className="w-12 rounded-full bg-white">
+
+            </div>
+          </div>
+          <div>
+
+          <div className="">
             <span className="font-bold">{chat.name}</span>
             <span className="text-sm text-gray-400">{chat.time}</span>
           </div>
           <p className="text-gray-400">{chat.message}</p>
+          </div>
         </div>
       ))}
     </div>

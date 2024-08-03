@@ -1,11 +1,27 @@
-import { useState } from 'react';
-import { FaBriefcase, FaPen } from 'react-icons/fa';
+import { useState } from "react";
+import { FaBriefcase, FaPen } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getCurrentUser,
+  updateCurrentUser,
+} from "../../app/reducers/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const RoleSelection = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.auth);
   const [selectedRole, setSelectedRole] = useState(null);
 
   const handleRoleSelect = (role) => {
     setSelectedRole(role);
+    dispatch(getCurrentUser());
+    console.log(currentUser);
+  };
+
+  const putRoleUser = async (role) => {
+    await dispatch(updateCurrentUser({ ...currentUser, role }));
+    navigate("/profile")
   };
 
   return (
@@ -16,18 +32,22 @@ const RoleSelection = () => {
         </h2>
         <div className="flex justify-around mb-6">
           <button
-            onClick={() => handleRoleSelect('employer')}
+            onClick={() => handleRoleSelect("2")}
             className={`flex flex-col items-center p-4 rounded-lg transition ${
-              selectedRole === 'employer' ? 'bg-red-600 text-white' : 'bg-gray-100 text-black'
+              selectedRole === "2"
+                ? "bg-red-600 text-white"
+                : "bg-gray-100 text-black"
             }`}
           >
             <FaBriefcase size={40} />
             <span className="mt-2">Работодатель</span>
           </button>
           <button
-            onClick={() => handleRoleSelect('candidate')}
+            onClick={() => handleRoleSelect("3")}
             className={`flex flex-col items-center p-4 rounded-lg transition ${
-              selectedRole === 'candidate' ? 'bg-red-600 text-white' : 'bg-gray-100 text-black'
+              selectedRole === "3"
+                ? "bg-red-600 text-white"
+                : "bg-gray-100 text-black"
             }`}
           >
             <FaPen size={40} />
@@ -35,8 +55,9 @@ const RoleSelection = () => {
           </button>
         </div>
         <button
+          onClick={() => putRoleUser(selectedRole)}
           className={`w-full py-2 rounded-lg text-white transition ${
-            selectedRole ? 'bg-red-600' : 'bg-gray-400 cursor-not-allowed'
+            selectedRole ? "bg-red-600" : "bg-gray-400 cursor-not-allowed"
           }`}
           disabled={!selectedRole}
         >

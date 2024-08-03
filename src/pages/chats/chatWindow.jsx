@@ -1,4 +1,5 @@
 import { FiPaperclip } from "react-icons/fi";
+import "../../components/css/custom.css";
 
 const messages = [
   {
@@ -19,6 +20,20 @@ const messages = [
   },
   {
     id: 3,
+    from: "Alex B.",
+    content: "Отлично, договорились!",
+    time: "10:00",
+    sent: false,
+  },
+  {
+    id: 4,
+    from: "Alex B.",
+    content: "Отлично, договорились!",
+    time: "10:00",
+    sent: true,
+  },
+  {
+    id: 5,
     from: "Alex B.",
     content: "Отлично, договорились!",
     time: "10:00",
@@ -86,7 +101,7 @@ const ChatWindow = () => {
           </button>
         </div>
       </div>
-      <div className="flex-1 overflow-auto mb-4">
+      <div className="flex-1 overflow-auto mb-4 scrollbar-thin">
         {messages.map((message) => (
           <div key={message.id} className="mb-4">
             <div className={`flex ${message.sent ? "justify-end" : "justify-start"}`}>

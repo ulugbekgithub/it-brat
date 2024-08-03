@@ -13,6 +13,7 @@ import Notification from "./components/notification";
 import NotFound from "./pages/notFound/notFound";
 import FavoriteProject from "./components/favoriteProject";
 import RoleSelection from "./pages/roll/roleSelection";
+import Settings from "./components/settings";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             path="/profile/favorite-projects"
             element={<FavoriteProject />}
           />
+          <Route path="/profile/settings" element={<Settings />} />
           <Route path="/profile/projects" element={<Projects />} />
           <Route path="/profile/resume" element={<Rezume />} />
           <Route path="/profile/chat" element={<Chat />} />

@@ -25,7 +25,7 @@ const MobileSwiper = () => {
   };
 
   return (
-    <div className="w-full px-5">
+    <div className="w-full">
       <div className="flex items-center justify-center flex-col h-[500px] text-main-white">
         <Swiper
           effect={"coverflow"}
@@ -33,10 +33,10 @@ const MobileSwiper = () => {
           centeredSlides={true}
           slidesPerView={"auto"}
           coverflowEffect={{
-            rotate: 10,
+            rotate: 40,
             stretch: 10,
             depth: 200,
-            modifier: 1,
+            modifier: 2,
             slideShadows: true,
           }}
           navigation={{
@@ -102,3 +102,4 @@ const MobileSwiper = () => {
 };
 
 export default MobileSwiper;
+
