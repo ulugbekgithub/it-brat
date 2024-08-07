@@ -63,14 +63,14 @@ export default function Profile() {
   const goToLogout = () => {
     navigate("/");
     localStorage.removeItem("accessToken");
-    setClick(false)
-  }
+    setClick(false);
+  };
 
   const goToSettings = () => {
     navigate("/profile/settings");
     setClick(false);
   };
-  
+
   const goToFavoriteProject = () => {
     navigate("/profile/favorite-projects");
     setClick(false);
@@ -108,7 +108,6 @@ export default function Profile() {
                 <div className="overflow-hidden">
                   <span
                     onClick={goToFavoriteProject}
-                   
                     className="flex flex-row items-center transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                   >
                     <span className="text-sm font-medium text-second-color">
@@ -139,7 +138,7 @@ export default function Profile() {
             </li>
             <li className="text-base">
               <span
-              onClick={goToProject}
+                onClick={goToProject}
                 className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
@@ -188,7 +187,7 @@ export default function Profile() {
             <ul>
               <li className="text-base">
                 <span
-                onClick={goToSettings}
+                  onClick={goToSettings}
                   className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                 >
                   <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
@@ -200,7 +199,7 @@ export default function Profile() {
 
               <li className="text-base">
                 <span
-                onClick={goToLogout}
+                  onClick={goToLogout}
                   className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red"
                 >
                   <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
@@ -249,26 +248,26 @@ export default function Profile() {
           <ProfileSidebar />
         </div>
         <div className="relative">
-      <div
-        className={`fixed top-0 right-0 h-full transition-transform duration-300 ease-in-out transform ${
-          open ? "translate-x-0" : "translate-x-full"
-        } md:hidden max-w-[308px] w-full `}
-      >
-        <ProfileBurger />
-      </div>
-      <div
-        className={`fixed top-0 right-0 transition-transform duration-300 ease-in-out transform ${
-          open ? "-translate-x-[308px]" : "translate-x-0"
-        } md:hidden`}
-      >
-        <div
-          onClick={handleOpen}
-          className="w-10 h-10 mt-[400px] mr-[-20px] flex items-center justify-start  bg-gray-700 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30"
-        >
-          {open ? <GrNext color="white" /> :  <GrPrevious color="white" />}
+          <div
+            className={`fixed top-0 right-0 h-full transition-transform duration-300 ease-in-out transform ${
+              open ? "translate-x-0" : "translate-x-full"
+            } md:hidden max-w-[308px] w-full `}
+          >
+            <ProfileBurger />
+          </div>
+          <div
+            className={`fixed top-0 right-0 transition-transform duration-300 ease-in-out transform ${
+              open ? "-translate-x-[308px]" : "translate-x-0"
+            } md:hidden`}
+          >
+            <div
+              onClick={handleOpen}
+              className="w-10 h-10 mt-[400px] mr-[-20px] flex items-center justify-start  bg-gray-700 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30"
+            >
+              {open ? <GrNext color="white" /> : <GrPrevious color="white" />}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
       </div>
       <div className="w-full flex justify-center items-center bg-main-black">
         <div className="w-full max-w-[1196px]  flex justify-center items-center">

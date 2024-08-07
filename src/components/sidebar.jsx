@@ -2,7 +2,7 @@ import logo from "../assets/logo.png";
 
 import {
   IoSearch,
-  IoSettingsOutline,
+  // IoSettingsOutline,
   IoDocumentTextOutline,
   IoExitOutline,
 } from "react-icons/io5";
@@ -26,7 +26,6 @@ export default function Sidebar() {
   useEffect(() => {
    dispatch(getCurrentUser());
   }, [dispatch]);
-  console.log(currentUser);
 
   const logOutProfile = () => {
     dispatch(logout());
@@ -129,14 +128,14 @@ export default function Sidebar() {
 
           <div className="px-12 py-20">
             <ul>
-              <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
+              {/* <li className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-main-red cursor-pointer">
                 <Link to={"/profile/settings"}>
                   <span className="inline-flex items-center justify-center h-12 w-12 text-lg">
                     <IoSettingsOutline />
                   </span>
                   <span className="text-sm font-medium">Настройки</span>
                 </Link>
-              </li>
+              </li> */}
 
               <li
                 onClick={logOutProfile}

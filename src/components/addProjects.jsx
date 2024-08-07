@@ -23,6 +23,7 @@ export default function AddProjects({ stateValue, setStateValue }) {
   };
 
   const onSubmit = (data) => {
+    console.log(data);
     if (data.image && data.image[0]) {
       dispatch(
         addProjects({ ...data, valuta: currency, image: data.image[0] })
