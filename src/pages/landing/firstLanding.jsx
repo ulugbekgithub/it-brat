@@ -8,7 +8,6 @@ import commandMan from "../../assets/commandMan.webp";
 import bratman from "../../assets/bratman.png";
 import bratgirl from "../../assets/bratgirl.png";
 
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
@@ -22,10 +21,11 @@ import ScrollComponent from "../../components/scrollComponent";
 import SwiperRezume from "../../components/swiperRezume";
 import { useDispatch, useSelector } from "react-redux";
 import { getProjectsCategory } from "../../app/reducers/projectsSlice";
+import { FaCheck } from "react-icons/fa";
 
 export default function FirstLanding() {
   const [openComponentCompany, setOpenComponentCompany] = useState(true);
-  const {projectsCategory}=useSelector((state)=>state.projects)
+  const { projectsCategory } = useSelector((state) => state.projects);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -36,8 +36,8 @@ export default function FirstLanding() {
     <div>
       <Header />
       <div className="w-full min-h-[800px] flex justify-center items-center bg-photo bg-main-black">
-        <div className="w-full max-w-[1096px] h-full flex flex-col justify-around  p-5">
-          <div className="">
+        <div className="w-full max-w-[1096px] h-full  flex flex-col justify-around">
+          <div className="md:mt-[-100px] mt-[-300px] md:p-0 p-10">
             <h1 className="w-full md:max-w-[1026px] max-w-[275px]  md:leading-[68px] leading-9 md:text-5xl text-xl font-bold text-main-white">
               НАХОДИТЕСЬ В ПОИСКЕ ИНТЕРЕСНОГО{" "}
               <span className="text-main-red">ПРОЕКТА</span> ИЛИ{" "}
@@ -49,8 +49,8 @@ export default function FirstLanding() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-[31px] md:px-0 px-5">
-            <button className="w-full max-w-[346px] h-[70px] text-main-white border-[3px] border-solid border-main-red  bg-gray-7800 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30">
+          <div className="flex flex-col gap-[31px] md:mx-0 mx-20  md:mt-[-350px] mt-[-500px]">
+            <button className="w-full max-w-[346px] h-[70px]  text-main-white border-[3px] border-solid border-main-red  bg-gray-7800 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30">
               <span className="font-bold text-[clamp(16px,3vw,24px)]">
                 НАЙТИ ПРОЕКТ
               </span>
@@ -65,11 +65,13 @@ export default function FirstLanding() {
       </div>
 
       <div className="w-full relative min-h-[441px] flex justify-center items-center bg-main-black p-24 py-32">
-        <div className="w-full max-w-[1258px] min-h-[323px] mt-[-200px] flex flex-col items-center md:flex-row md:justify-around rounded-xl h-full bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur-sm bg-opacity-20 saturate-100 backdrop-contrast-100">
+        <div className="w-full max-w-[1258px] min-h-[323px] mt-[-300px] flex flex-col items-center md:flex-row md:justify-around rounded-xl h-full bg-gray-700 bg-clip-padding backdrop-filter  backdrop-blur-sm bg-opacity-10 saturate-100 backdrop-contrast-100">
           <div className="w-full max-w-[224px] min-h-[226px] text-center ">
-            <div className="w-[100px] h-[73.44px] mx-auto mb-10">
-              <img src={account} alt="account" />
-            </div>
+            <img
+              className="w-full max-w-[100px] min-h-[74px] mx-auto"
+              src={account}
+              alt="account"
+            />
             <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">
               СОЗДАЙТЕ АККАУНТ
             </h4>
@@ -78,9 +80,11 @@ export default function FirstLanding() {
             </p>
           </div>
           <div className="w-full max-w-[224px] h-[226px] text-center">
-            <div className="w-[100px] h-[73.44px] mx-auto mb-10">
-              <img src={rezume} alt="rezume" />
-            </div>
+            <img
+              className="w-full max-w-[100px] min-h-[74px] mx-auto"
+              src={rezume}
+              alt="rezume"
+            />
             <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">
               ЗАПОЛНИТЕ РЕЗЮМЕ
             </h4>
@@ -89,9 +93,11 @@ export default function FirstLanding() {
             </p>
           </div>
           <div className="w-full max-w-[224px] h-[226px] text-center ">
-            <div className="w-[100px] h-[73.44px] mx-auto mb-10">
-              <img src={search} alt="search" />
-            </div>
+            <img
+              className="w-full max-w-[100px] min-h-[74px] mx-auto"
+              src={search}
+              alt="search"
+            />
             <h4 className="text-main-white mb-3 text-[clamp(16px,3vw,20px)]">
               ИЩИТЕ И СОЗДАВАЙТЕ
             </h4>
@@ -108,10 +114,10 @@ export default function FirstLanding() {
           <span className="text-main-red"> МЕЧТЫ</span> ЗДЕСЬ
         </h2>
         <div className="w-full max-w-[1196px] flex flex-col items-center justify-center md:p-5 p-5">
-          <div className="w-full flex flex-col-reverse md:flex-row md:p-5">
-            <div className="md:min-h-[600px] flex items-end">
+          <div className=" w-full flex flex-col-reverse md:flex-row md:p-5">
+            <div className="flex items-end">
               <img
-                className="w-full h-full"
+                className="w-full h-full object-contain"
                 src={commandMan}
                 alt="commandMan"
               />
@@ -213,20 +219,68 @@ export default function FirstLanding() {
                 )}
               </div>
               <div className="w-full md:flex justify-between hidden">
-                <div className="w-full max-w-[491px] min-h-[600px] flex flex-col justify-between items-center pt-5 text-center itbrat-box">
-                  <span className="text-main-white text-3xl font-semibold">
-                    Для компаний
-                  </span>
+                <div className="relative w-full max-w-[491px] min-h-[600px] flex flex-col justify-between items-center pt-5 text-center text-main-white itbrat-box hover:bg-white hover:cursor-pointer hover:text-main-black">
+                  <span className="text-3xl font-semibold">Для компаний</span>
+                  <ul className="absolute right-3 top-32 flex flex-col whitespace-nowrap gap-3 opacity-0 invisible transition-opacity duration-300 ease-in-out hover-ul">
+                    <li className="flex gap-2">
+                      <FaCheck size={20} color="red" />
+                      <span className="text-main-black text-[16px] font-light text-start">
+                        быстрый поиск <br /> профессианальной команды <br /> или
+                        специалиста
+                      </span>
+                    </li>
+                    <li className="flex gap-2">
+                      <FaCheck size={20} color="red" />
+                      <span className="text-main-black text-[16px] font-light">
+                        удобный формат связи и работы
+                      </span>
+                    </li>
+                    <li className="flex gap-2">
+                      <FaCheck size={20} color="red" />
+                      <span className="text-main-black text-[16px] font-light">
+                        гарантия результата
+                      </span>
+                    </li>
+                  </ul>
                   <div className="w-full max-w-[373px] min-h-[467px] pt-5">
-                    <img className="mt-12" src={bratman} alt="bratman" />
+                    <img
+                      className="mt-12 transition-transform duration-300 ease-in-out transform boyImg"
+                      src={bratman}
+                      alt="bratman"
+                    />
                   </div>
                 </div>
-                <div className="w-full max-w-[491px] min-h-[600px] flex flex-col justify-between items-center pt-5 text-center itbrat-box">
-                  <span className="text-main-white text-3xl font-semibold">
+
+                <div className="relative w-full max-w-[491px] min-h-[600px] flex flex-col justify-between items-center pt-5 text-center text-main-white itbrat-box hover:bg-main-white hover:text-main-black hover:cursor-pointer">
+                  <span className="text-3xl font-semibold">
                     Для фрилансеров
                   </span>
+                  <ul className="absolute left-48 top-32 w-full flex flex-col whitespace-nowrap gap-3 px-12 opacity-0 invisible transition-opacity duration-300 ease-in-out hover-ul">
+                    <li className="flex gap-2">
+                      <FaCheck size={20} color="red" />
+                      <span className="text-[16px] font-light text-start">
+                        регулярно обновляющаяся <br /> база проектов
+                      </span>
+                    </li>
+                    <li className="flex gap-2">
+                      <FaCheck size={20} color="red" />
+                      <span className="text-[16px] font-light text-start">
+                        возможность создавать <br /> команду
+                      </span>
+                    </li>
+                    <li className="flex gap-2">
+                      <FaCheck size={20} color="red" />
+                      <span className="text-[16px] font-light text-start">
+                        удобная платформа для <br /> ведения проектов
+                      </span>
+                    </li>
+                  </ul>
                   <div className="w-full max-w-[373px] h-[467px] pt-5">
-                    <img className="mt-9" src={bratgirl} alt="bratgirl" />
+                    <img
+                      className="mt-10 transition-transform duration-300 ease-in-out transform girlImg"
+                      src={bratgirl}
+                      alt="bratgirl"
+                    />
                   </div>
                 </div>
               </div>
@@ -268,7 +322,7 @@ export default function FirstLanding() {
                   backgroundImage: `url(${item.logo})`,
                 }}
               >
-                <div className="h-full w-full flex justify-center items-center bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
+                <div className="h-full w-full flex justify-center items-center bg-gray-900 rounded-md bg-clip-padding backdrop-filter bg-opacity-40">
                   <h4 className="text-main-white text-[clamp(12px,3vw,24px)] w-[170px] h-[62px] font-bold text-center flex justify-center items-center">
                     {item.name}
                   </h4>
@@ -276,11 +330,11 @@ export default function FirstLanding() {
               </div>
             ))}
           </div>
-          <button className="w-full max-w-[283px] h-[62px] rounded-md bg-main-red text-main-white text-2xl font-bold mt-[69px] box-shadow">
+          <button className="w-full md:max-w-[283px] max-w-[184px] md:h-[62px] h-[41px] rounded-md bg-main-red text-main-white text-[clamp(12px,3vw,24px)] font-bold box-shadow">
             Больше категорий
           </button>
 
-          <div className="w-full py-10 flex flex-col md:flex-row justify-between items-center">
+          <div className="w-full py-20 flex flex-col md:flex-row justify-between items-center">
             <div className="w-[80%]">
               <h1 className="w-full flex justify-center gap-2 text-main-white text-[clamp(24px,3vw,48px)] font-bold">
                 ЛУЧШИЕ <span className="text-main-red">РЕЗЮМЕ</span>
@@ -300,11 +354,11 @@ export default function FirstLanding() {
                 <h1 className="text-main-white md:text-5xl text-2xl font-bold">
                   БОЛЬШЕ ИНТЕРЕСНЫХ ПРОЕКТОВ
                 </h1>
-                <p className="text-second-color md:text-xl text-sm font-light">
+                <p className="text-second-color md:text-xl text-sm font-light mt-10">
                   Подпишись на рассылку и получай новости одним из первых
                 </p>
               </div>
-              <div className="flex flex-col md:flex-row justify-evenly">
+              <div className="flex flex-col gap-5 md:flex-row justify-evenly">
                 <input
                   className="w-full max-w-[658px] h-[54px] text-second-color bg-[#343434] rounded-md p-3"
                   type="text"

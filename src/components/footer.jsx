@@ -3,12 +3,13 @@ import logo from "../assets/logo.png";
 import { BiLogoTelegram } from "react-icons/bi";
 import { SlSocialVkontakte } from "react-icons/sl";
 import { PiInstagramLogoFill } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="w-full max-w-[1196px] flex flex-col-reverse items-center  gap-20 md:flex-row  mt-[200px] pb-12">
-      <div className="w-1/2 flex justify-between">
-        <div>
+    <div className="w-full max-w-[1196px] flex flex-col-reverse items-center  justify-between md:flex-row  mt-[200px] pb-12">
+       <div className="w-1/2 flex justify-between items-center">
+       <div>
           <ul className="flex flex-col gap-2 p-5 text-[clamp(8px,3vw,14px)]">
             <li className="text-main-white">
               <h3>МЕНЮ</h3>
@@ -30,11 +31,13 @@ export default function Footer() {
             <li className="text-second-color">Услуги</li>
           </ul>
         </div>
-      </div>
-      <div className="w-1/2">
+       </div>
+      <div>
         <ul className="text-[clamp(8px,3vw,14px)]">
           <li className="w-[196px] h-[32px]">
-            <img src={logo} alt="logo" />
+            <Link to={"/"}>
+            <img onClick={() => window.scrollTo(0, 0)} src={logo} alt="logo" />
+            </Link>
           </li>
           <li className="text-second-color mt-[29px]">
             Следи за нами в соц. сетях:

@@ -38,7 +38,9 @@ export default function Sidebar() {
         <div className="flex flex-col w-full max-w-[393px]  bg-[#101010] text-main-white rounded-3xl overflow-hidden">
           <div className="flex items-center justify-center h-20 shadow-md">
             <div className="p-10">
-              <img src={logo} alt="logo" />
+              <Link to={"/"}>
+                <img src={logo} alt="logo" />
+              </Link>
             </div>
           </div>
           <ul className="flex flex-col py-4 px-10">

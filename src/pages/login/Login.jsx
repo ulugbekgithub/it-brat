@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../app/reducers/authSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { RiCloseLargeLine } from "react-icons/ri";
 
 export default function Login() {
   const [userName, setUserName] = useState();
@@ -47,7 +48,14 @@ export default function Login() {
 
   return (
     <div>
-      <div className="w-screen h-screen flex justify-center items-center bg-main-black">
+      <div className="w-screen h-screen flex justify-center items-center relative bg-main-black">
+        <Link to={"/"}>
+          <RiCloseLargeLine
+            className="absolute top-5 right-5 cursor-pointer"
+            color="red"
+            size={30}
+          />
+        </Link>
         <form
           onSubmit={handleSubmit}
           className="p-10 bg-[#101010] rounded flex justify-center items-center flex-col shadow-2xl shadow-main-red"
@@ -76,7 +84,6 @@ export default function Login() {
           >
             <span>Вход</span>
           </button>
-          
         </form>
       </div>
       <ToastContainer

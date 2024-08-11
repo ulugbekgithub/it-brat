@@ -41,16 +41,16 @@ const DesktopSwiper = () => {
         >
           {ServiceData.map((item) => (
             <SwiperSlide key={uuidv4()}>
-              <div className="flex flex-col justify-end gap-6 mb-20 group relative shadow-lg text-white px-6 py-8 h-full w-full  overflow-hidden cursor-pointer">
+              <div className="w-full max-w-[298px] min-h-[335px] rounded-lg flex flex-col justify-end gap-6 mb-20 group relative shadow-lg text-white px-6 py-8 h-full   overflow-hidden cursor-pointer ">
                 <div
-                  className="absolute inset-0 bg-cover bg-center"
+                  className="absolute inset-0 bg-cover bg-center "
                   style={{
                     backgroundImage: `url(${item.backgroundImage})`,
                   }}
                 />
-                <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50" />
+                <div className="absolute inset-0   bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10" />
                 <div className="relative flex flex-col gap-10">
-                  <h1 className="text-xl font-semibold lg:text-2xl">
+                  <h1 className="flex justify-start text-xl font-semibold lg:text-2xl">
                     {item.title}
                   </h1>
                   <div className="w-full flex items-end justify-between">

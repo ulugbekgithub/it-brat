@@ -12,7 +12,7 @@ export default function Header() {
 
   const content = (
     <>
-      <div className="md:hidden block absolute top-16 w-full h-screen z-10 left-0 right-0 bg-main-black transition">
+      <div className="md:hidden block absolute top-24 w-full h-screen z-10 left-0 right-0 bg-main-black transition">
         <ul className="text-center text-xl p-20 text-main-white">
           <li className="cursor-pointer hover:text-main-red my-4 py-4">
             ГЛАВНАЯ
@@ -30,9 +30,9 @@ export default function Header() {
             </Link>
             <div className="w-1 h-5 bg-main-red"></div>
             <Link to={"/sign-up"}>
-            <span className="cursor-pointer hover:text-main-red">
-              Регистрация
-            </span>
+              <span className="cursor-pointer hover:text-main-red">
+                Регистрация
+              </span>
             </Link>
           </li>
         </ul>
@@ -41,10 +41,13 @@ export default function Header() {
   );
 
   return (
-    <div className="w-full  h-[130px] flex justify-center items-start p-5 bg-main-black">
-      <div className="w-full max-w-[1196px] flex justify-between items-center">
+    <div className="w-full  h-[130px] flex justify-center items-start p-1  bg-main-black">
+      <div className="w-full max-w-[1196px] p-10  flex justify-between items-center">
         <div className="w-[196px] h-[32px]">
-          <img src={logo} alt="logo" />
+          <Link to={"/"}>
+            {" "}
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
         <div>
           <ul className="md:flex gap-[60px] text-main-white lg:text-base text-xs hidden">
@@ -69,11 +72,14 @@ export default function Header() {
       </div>
 
       <div>{click && content}</div>
-      <button className="block md:hidden transition" onClick={handleClick}>
+      <button
+        className="block md:hidden transition mt-10"
+        onClick={handleClick}
+      >
         {click ? (
-          <RiCloseLargeLine color="white" size={25} />
+          <RiCloseLargeLine color="white" size={30} />
         ) : (
-          <BiMenuAltRight color="white" size={25} />
+          <BiMenuAltRight color="white" size={30} />
         )}
       </button>
     </div>

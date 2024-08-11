@@ -12,7 +12,7 @@ const initialState = {
 };
 
 export const resumePostLike = createAsyncThunk(
-  "resume/resumePostLike",  
+  "resume/resumePostLike",
   async (id, thunkAPI) => {
     try {
       const token = localStorage.getItem("accessToken");
@@ -32,7 +32,7 @@ export const resumePostLike = createAsyncThunk(
       return thunkAPI.rejectWithValue(error);
     }
   }
-)
+);
 
 export const resumeDeleteLike = createAsyncThunk(
   "resume/resumeDeleteLike",

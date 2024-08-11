@@ -2,8 +2,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { register } from "../../app/reducers/authSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { RiCloseLargeLine } from "react-icons/ri";
 
 const validationSchema = Yup.object({
   username: Yup.string()
@@ -52,7 +53,14 @@ export default function Register() {
   };
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center bg-main-black">
+    <div className="w-screen h-screen flex justify-center items-center relative bg-main-black">
+      <Link to={"/"}>
+          <RiCloseLargeLine
+            className="absolute top-5 right-5 cursor-pointer"
+            color="red"
+            size={30}
+          />
+        </Link>
       <Formik
         initialValues={{
           username: "",
